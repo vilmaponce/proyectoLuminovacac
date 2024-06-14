@@ -491,12 +491,13 @@ body {
 
 .container {
     position: flex;
-    width: 400px;
-    height: 550px;
+    width:300px;
+    height:175px;
     padding: 40px;
     background-color: var(--color-terciario);
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(143, 135, 135, 0.3);
+    margin-top:150px;
 }
 
 h1 {
@@ -540,7 +541,21 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: lightcoral;
 }
+/*--------- boton formulario------------------- */
+.contact-link {
+    display: block; /* Hace que el enlace ocupe toda la anchura del contenedor */
+    background-color: #007bff; /* Color de fondo azul */
+    color: #fff; /* Color de texto blanco */
+    padding: 10px 20px; /* Espacio alrededor del texto */
+    text-align: center; /* Centra el texto horizontalmente */
+    text-decoration: none; /* Elimina la subrayado del enlace */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 10px; /* Espacio superior */
+}
 
+.contact-link:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar el ratón sobre el enlace */
+}
 /************************* Sección de Tarjetas Niveles **************************/
 
 #institucional,
@@ -902,7 +917,7 @@ input[type="submit"]:hover {
 
     /************************ Navbar *********/
     .header {
-        width: 100vw;
+        width:100vw;
         height: 10vh;
         padding-left: 1rem;
     }

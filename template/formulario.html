@@ -56,23 +56,33 @@
             <form id="registroForm">
                 <label for="nombre">Nombre/s :</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Nombre"><br>
-                <label for="nombre">Apellido/s :</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Apellido"><br>
+                <small id="errorNombre" class="error"></small><br>
 
-                <label for="direccion">Dirección:</label>
-                <input type="text" id="calle" name="calle" placeholder="Calle" required>
-                <input type="text" id="numero" name="numero" placeholder="Número" required>
-                <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad" required>
+                <label for="apellido">Apellido/s :</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Apellido"><br>
+                <small id="errorApellido" class="error"></small><br>
+
+                <label for="direccion">Dirección:</label><br>
+                <input type="text" id="calle" name="calle" placeholder="Calle" required><br>
+                <small id="errorCalle" class="error"></small><br>
+                <input type="text" id="numero" name="numero" placeholder="Número" required><br>
+                <small id="errorNumero" class="error"></small><br>
+                <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad" required><br>
+                <small id="errorCiudad" class="error"></small><br>
                 <input type="text" id="codigo_postal" name="codigo_postal" placeholder="Código Postal" required><br>
+                <small id="errorCodigoPostal" class="error"></small><br>
 
-                <label for="telefono">Teléfono:</label>
+                <label for="telefono">Teléfono:</label><br>
                 <input type="tel" id="telefono" name="telefono" placeholder="Ej 11123456789" required><br>
+                <small id="errorTelefono" class="error"></small><br>
 
-                <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                <label for="fecha_nacimiento">Fecha de Nacimiento:</label><br>
                 <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br>
+                <small id="errorFechaNacimiento" class="error"></small><br>
 
-                <label for="email">Correo Electrónico:</label>
+                <label for="email">Correo Electrónico:</label><br>
                 <input type="email" id="email" name="email" required><br>
+                <small id="errorEmail" class="error"></small><br>
 
                 <!-- Género -->
                 <div class="genero-container">
@@ -143,7 +153,7 @@
                         <input type="checkbox" id="huerta" name="huerta" value="Huerta organica">
                         <label for="huerta">Huerta</label>
                     </div>
-
+                    <div id="errorActividades" class="error"></div> <!-- Nuevo elemento para mostrar mensajes de error -->
 
                 </div>
 
@@ -159,7 +169,9 @@
                 <label for="comentarios">Comentarios:</label><br>
                 <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea>
 
-                <button type="submit" class="boton" onclick="enviarFormulario()">Enviar</button>
+                <button type="submit" class="boton" onclick="return enviarFormulario();">Enviar</button>
+
+
             </form>
         </section>
     </main>
@@ -179,7 +191,7 @@
                         <a href="./contact.html">
                             <i class="fa-solid fa-phone-volume"></i>
                             <div class="address-info-p">
-                                <p>Calle Falsa 123</p>
+                                <p>Bartolomé Mitre 1234, Florida Oeste.</p>
                                 <p>Buenos Aires, Argentina</p>
                                 <p>Tel: 1234-5678</p>
                                 <p>escuela@correo.com</p>
@@ -202,7 +214,8 @@
             </article>
         </section>
     </footer>
-    <script src="../static/js/main.js"></script>
+    <!-- <script src="../static/js/main.js"></script> -->
+    <script src="../static/js/validacion.js"></script>
 </body>
 
 </html>

@@ -186,3 +186,11 @@ setInterval(nextSlide, 5000);
 
 // Mostrar la slide inicial
 showSlide(index);
+
+
+
+
+
+
+
+

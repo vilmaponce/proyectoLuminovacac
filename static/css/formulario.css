@@ -514,6 +514,12 @@ textarea {
         top: 7vh;
     }
 
+    .error {
+        color: red;
+        font-size: 0.8em;
+    }
+    
+
     /*********************************** Footer ***************************************/
     .footer-info {
         gap: 2em;
