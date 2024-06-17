@@ -1,19 +1,3 @@
-//JS para el Navbar
-const navToggle = document.querySelector(".nav-toggle");
-const navMenu = document.querySelector(".nav-menu");
-
-navToggle.addEventListener("click", ()=> {
-  navMenu.classList.toggle("nav-menu_visible"); /*muestra o no el menu*/
-
-  if (navMenu.classList.contains ("nav-menu_visible")){
-    navToggle.setAttribute("aria-label", "Cerrar menú");
-  } else {
-    navToggle.setAttribute("aria-label", "Abrir menú");
-  }
-});
-
-/*------------------------------------------------------------*/
-
 // JS para el Carrusel
 const btnLeft = document.querySelector(".btn-left");
 const btnRight = document.querySelector(".btn-right");
@@ -77,7 +61,7 @@ var year = now.getFullYear();
 
 
 initCalender();
-console.log(startDay());
+//console.log(startDay());
 
 function initCalender(){
     $("#text_day").text(day);
