@@ -30,7 +30,7 @@ const createUser = (req, res) => {
     const escolaridad = "Nivel Primario";
     const clave = "hola1234";
 
-    // Con el método .query que proporciona mysql2 generamos la sentenfcia que enviaremos a la BBDD MySql
+    // Con el método .query que proporciona mysql2 generamos la sentencia que enviaremos a la BBDD MySql
     db.query(sql, [doc, nombre, apellido, nacimiento, calle, num_calle, ciudad, cp, escolaridad, clave],(err, result) => {
         if (err) throw err;
         res.json({message: "Usuario creado con éxito!", alumnoID: result.insertId});
