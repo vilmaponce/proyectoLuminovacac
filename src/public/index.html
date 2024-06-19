@@ -13,9 +13,9 @@
     <!-- zona de script FontAwesome -->
     <script src="https://kit.fontawesome.com/eae8fc4e25.js" crossorigin="anonymous"></script>
     <!-- zona del favicon -->
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <!-- zona de estilos -->
-    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="stylesheet" href="../static/css/index.css">
     <!-- zona de fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,9 +29,9 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header navegation">
         <nav class="nav">
-            <a href="#" class="nav-link"><img src="./static/img/navFondo.png" alt=""></a>
+            <a href="#" class="nav-link"><img src="../static/img/navFondo.png" alt=""></a>
             <button class="nav-toggle" aria-label="Abrir menú">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -49,31 +49,31 @@
                     <a href="./template/contact.html" class="nav-menu-link nav-link">Contacto</a>
                 </li>
                 <li class="nav-menu-item dropdown">
-                    <a class="nav-menu-link nav-link">Login</a>
+                    <a class="nav-menu-link nav-link"><i class="fa-solid fa-user"></i></a>
                     <!-- menu desplegable -->
                     <ul class="dropdown-content">
-                        <li><a href="./template/singin.html">Iniciar sesión</a></li>
-                        <li><a href="./template/singup.html">Registrarse</a></li>
+                        <li><a href="../template/singin.html"><i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión</a></li>
+                        <li><a href="../template/singup.html"><i class="fa-solid fa-user-plus"></i> Registrarse</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
     </header>
-    <main>
+    <main class="main">
         <!-- Banner -->
         <section>
             <div class="container-carousel">
                 <div class="carruseles" id="slider">
                     <div class="slide-banner">
-                        <img src="./static/img/entrada.jpg" alt="">
+                        <img src="../static/img/entrada.jpg" alt="">
                         <div class="cuerpo-texto">Un lugar donde cada niño cuenta.</div>
                     </div>
                     <div class="slide-banner">
-                        <img src="./static/img/aula.jpg" alt="">
+                        <img src="../static/img/aula.jpg" alt="">
                         <div class="cuerpo-texto">¡Descubre, aprende, crece!</div>
                     </div>
                     <div class="slide-banner">
-                        <img src="./static/img/laboratorio.jpg" alt="">
+                        <img src="../static/img/laboratorio.jpg" alt="">
                         <div class="cuerpo-texto">Explorando el mundo, aprendiendo juntos.</div>
                     </div>
                 </div>
@@ -88,29 +88,29 @@
                 <!-- Carrusel -->
                 <div class="carousel">
                     <div class="slide">
-                        <img src="./static/img/admitidos.jpg" alt="Imagen 1">
+                        <img src="../static/img/admitidos.jpg" alt="Imagen 1">
                         <div class="overlay">
                             <h2>Ingresantes 2024</h2>
                             <p>¿Quieres saber si formas parte de los nuevos ingresos?
                                 <br>
                                 Descarga aca el listado actualizado 2024.
                             </p>
-                            <a download="Listado Ingresantes 2024" href="./static/docs/Listado_de_Ingresantes.pdf"
+                            <a download="Listado Ingresantes 2024" href="../static/docs/Listado_de_Ingresantes.pdf"
                                 title="Descarga el listado de ingresantes 2024">Ingresantes 2024</a>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="./static/img/extracurriculares.png" alt="Imagen 2">
+                        <img src="../static/img/extracurriculares.png" alt="Imagen 2">
                         <div class="overlay">
                             <h2>Actividades Extracurriculares</h2>
                             <p>Descarga aca información de los horarios disponibles para todas
                                 las actividades extracurriculares disponibles para los alumnos.</p>
-                            <a download="actividadesExtras" href="./static/docs/Horario_act_extracurriculaes.pdf"
+                            <a download="actividadesExtras" href="../static/docs/Horario_act_extracurriculaes.pdf"
                                 title="Haz click para descargar horarios">Descargar Horarios</a>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="./static/img/noticias.jpg" alt="Imagen 3">
+                        <img src="../static/img/noticias.jpg" alt="Imagen 3">
                         <div class="overlay">
                             <h2>Noticias</h2>
                             <p>Robotica Escolar, un Nuevo Aprendizaje
@@ -119,19 +119,19 @@
                                 <br>
                                 Olimpiadas de Ciencias Colombia 2024
                             </p>
-                            <a href="./template/noticias.html" title="Ingresa a nuestro portal de Noticias">Noticias
+                            <a href="../template/noticias.html" title="Ingresa a nuestro portal de Noticias">Noticias
                                 Escolares</a>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="./static/img/reunion-padres.jpg" alt="Imagen 4">
+                        <img src="../static/img/reunion-padres.jpg" alt="Imagen 4">
                         <div class="overlay">
                             <h2>Información para Padres</h2>
                             <p>26 de Abril
                                 <br>
                                 Ingresa a nuestro diario Escolar y encontra toda la información.
                             </p>
-                            <a href="./template/noticias.html" title="Ingresa a nuestro Diario escolar">Diario
+                            <a href="../template/noticias.html" title="Ingresa a nuestro Diario escolar">Diario
                                 Escolar</a>
                         </div>
                     </div>
@@ -195,10 +195,10 @@
                 <div class="container">
                     <h4>Nos comunicamos con nuestra Comunidad!</h4>
                     <!-- <input type="submit" value="Enviar"> -->
-                    <a href="./template/contact.html#form-2" class="contact-link">¡CONTACTANOS!</a>
+                    <a href="../template/contact.html#form-2" class="contact-link">¡CONTACTANOS!</a>
                     <!--FORMULARIO inscripciones-->
                     <!-- <input type="submit" value="Enviar"> -->
-                    <a href="./template/formulario.html" class="contact-link">Solicitud de Inscripción</a>
+                    <a href="../template/formulario.html" class="contact-link">Solicitud de Inscripción</a>
                 </div>
             </article>
         </section>
@@ -207,39 +207,47 @@
             <div class="institutional-container">
                 <!-- Nivel Inicial -->
                 <article id="inicial" class="levels-container">
-                    <img src="./static/img/inicial.jpg" alt="Nivel Inicial">
+                    <img src="../static/img/inicial.jpg" alt="Nivel Inicial">
                     <div class="initial-description">
                         <h3>Nivel Inicial</h3>
-                        <p>Nuestro Jardín se basa en la pedagogía del amor y en la educación de valores. Contempla como
-                            objetivo fundamental favorecer y estimular el desarrollo integral del niño con propuestas
-                            lúdicas acordes a su etapa evolutiva. Ellos serán constructores y protagonistas, el docente
+                        <p>Nuestro Jardín se basa en la pedagogía del amor y en la educación de valores. Contempla
+                            como
+                            objetivo fundamental favorecer y estimular el desarrollo integral del niño con
+                            propuestas
+                            lúdicas acordes a su etapa evolutiva. Ellos serán constructores y protagonistas, el
+                            docente
                             guía y colabora asegurando una enseñanza de conocimientos significativos que amplíen y
                             profundicen sus aprendizajes. Todo esto en un clima de calidez, afecto, contención y
                             respeto.</p>
-                        <a href="./template/inicial.html" class="boton">Conocé más</a>
+                        <a href="../template/inicial.html" class="boton">Conocé más</a>
                     </div>
                 </article>
                 <!-- Nivel Primario -->
                 <article id="primario" class="levels-container">
-                    <img src="./static/img/primaria.jpg" alt="Nivel Primario">
+                    <img src="../static/img/primaria.jpg" alt="Nivel Primario">
                     <div class="primary-description">
                         <h3>Nivel Primario</h3>
-                        <p>Nuestro nivel primario tiene el objetivo de ofrecer a los alumnos una selección de saberes y
-                            prácticas relevantes definidas a partir de las diferentes ramas de las ciencias y de otros
+                        <p>Nuestro nivel primario tiene el objetivo de ofrecer a los alumnos una selección de
+                            saberes y
+                            prácticas relevantes definidas a partir de las diferentes ramas de las ciencias y de
+                            otros
                             campos de la cultura, como así también promover la comprensión del carácter histórico,
-                            colectivo y cambiante de estos tipos de conocimiento. Establecer encuadres institucionales
-                            acordes con los valores de libertad, tolerancia, igualdad, verdad, justicia, solidaridad y
+                            colectivo y cambiante de estos tipos de conocimiento. Establecer encuadres
+                            institucionales
+                            acordes con los valores de libertad, tolerancia, igualdad, verdad, justicia, solidaridad
+                            y
                             paz, y promover la reflexión acerca de su significado. Promovemos el desarrollo de una
                             actitud de esfuerzo, trabajo y responsabilidad, curiosidad e interés por el aprendizaje,
-                            justificar y expresar sus ideas, conocer y respetar las ideas de los otros, fortaleciendo la
+                            justificar y expresar sus ideas, conocer y respetar las ideas de los otros,
+                            fortaleciendo la
                             confianza en las propias posibilidades de aprender.</p>
-                        <a href="./template/primaria.html" class="boton">Conocé más</a>
+                        <a href="../template/primaria.html" class="boton">Conocé más</a>
                     </div>
 
                 </article>
                 <!-- Nivel Secundario -->
                 <article id="secundaria" class="levels-container">
-                    <img src="./static/img/secundario.jpg" alt="Nivel Secundario">
+                    <img src="../static/img/secundario.jpg" alt="Nivel Secundario">
                     <div class="secondary-description ">
                         <h3>Nivel Secundario</h3>
                         <p>En nuestro nivel secundario propiciamos un clima institucional abierto al diálogo, la
@@ -247,9 +255,10 @@
                             primeros educadores. Transferimos los conocimientos con un estilo de aprendizaje y
                             propiciamos el desarrollo psicofísico en nuestros alumnos a través de la participación
                             activa en torneos deportivos, certámenes, talleres, concursos, etc. dentro y fuera de la
-                            escuela. Nos importa cultivar valores tales como solidaridad, verdad, respeto, honestidad y
+                            escuela. Nos importa cultivar valores tales como solidaridad, verdad, respeto,
+                            honestidad y
                             esperanza para que los alumnos puedan desarrollarse como adultos responsables.</p>
-                        <a href="./template/secundario.html" class="boton">Conocé más</a>
+                        <a href="../template/secundario.html" class="boton">Conocé más</a>
                     </div>
                 </article>
             </div>
@@ -261,49 +270,49 @@
             <article>
                 <div class="carousel-container">
                     <div class="card">
-                        <img src="./static/img/deportes.png" alt="Imagen 1">
+                        <img src="../static/img/deportes.png" alt="Imagen 1">
                         <div class="card-content">
                             <p>Sector Deportivo</p>
-                            <a href="./template/deportes.html">Conocé más
+                            <a href="../template/deportes.html">Conocé más
                             </a>
                         </div>
                     </div>
                     <div class="card">
-                        <img src="./static/img/arte.png" alt="Imagen 2">
+                        <img src="../static/img/arte.png" alt="Imagen 2">
                         <div class="card-content">
                             <p>Sector Artístico</p>
-                            <a href="./template/arte.html">Conocé más</a>
+                            <a href="../template/arte.html">Conocé más</a>
                         </div>
                     </div>
                     <div class="card">
-                        <img src="./static/img/academico.png" alt="Imagen 3">
+                        <img src="../static/img/academico.png" alt="Imagen 3">
                         <div class="card-content">
                             <p>Sector Académico</p>
-                            <a href="./template/academico.html">Conocé más
+                            <a href="../template/academico.html">Conocé más
                             </a>
                         </div>
                     </div>
                     <div class="card">
-                        <img src="./static/img/comunitario.png" alt="Imagen 4">
+                        <img src="../static/img/comunitario.png" alt="Imagen 4">
                         <div class="card-content">
                             <p>Sector Voluntariado</p>
-                            <a href="./template/voluntariado.html">Conocé más
+                            <a href="../template/voluntariado.html">Conocé más
                             </a>
                         </div>
                     </div>
                     <div class="card">
-                        <img src="./static/img/idiomas.png" alt="Imagen 5">
+                        <img src="../static/img/idiomas.png" alt="Imagen 5">
                         <div class="card-content">
                             <p>Sector Idiomas</p>
-                            <a href="./template/idiomas.html">Conocé más
+                            <a href="../template/idiomas.html">Conocé más
                             </a>
                         </div>
                     </div>
                     <div class="card">
-                        <img src="./static/img/huerta.png" alt="Imagen 6">
+                        <img src="../static/img/huerta.png" alt="Imagen 6">
                         <div class="card-content">
                             <p>Sector Huerta</p>
-                            <a href="./template/huerta.html">Conocé más
+                            <a href="../template/huerta.html">Conocé más
                             </a>
                         </div>
                     </div>
@@ -311,22 +320,22 @@
             </article>
             <!-- Enlaces -->
             <article class="enlaces">
-                <a href="./static/docs/Cronograma_Completo_2024.pdf" class="enlace-descarga"
+                <a href="../static/docs/Cronograma_Completo_2024.pdf" class="enlace-descarga"
                     download="Cronograma 2024">Haz click para descargar cronograma completo 2024</a>
-                <a href="./static/docs/Inicio_de_actividades.pdf" class="enlace-descarga"
+                <a href="../static/docs/Inicio_de_actividades.pdf" class="enlace-descarga"
                     download="Inicio de Actividades 2024">Inicio de actividades 2024</a>
-                <a href="./static/docs/Aranceles_2024.pdf" class="enlace-descarga" download="Aranceles 2024">Aranceles
+                <a href="../static/docs/Aranceles_2024.pdf" class="enlace-descarga" download="Aranceles 2024">Aranceles
                     actualizados 2024</a>
             </article>
             <!-- Botón para ir al formulario -->
             <article>
                 <div class="boton-formulario">
-                    <a href="./template/formulario.html" class="boton">Ir al formulario de inscripción</a>
+                    <a href="../template/formulario.html" class="boton">Ir al formulario de inscripción</a>
                 </div>
             </article>
         </section>
     </main>
-    <footer>
+    <footer class="navegation">
         <section id="footer-content">
             <!-- Accesos a Niveles educativos-->
             <article class="footer-container">
@@ -360,12 +369,12 @@
                     <!-- Logo -->
                     <div class="logo-link">
                         <a href="#">
-                            <img src="./static/img/navFondo.png" alt="Logo sin fondo">
+                            <img src="../static/img/navFondo.png" alt="Logo sin fondo">
                         </a>
                     </div>
                     <!-- Dirección -->
                     <div class="address-info">
-                        <a href="./template/contact.html">
+                        <a href="../template/contact.html">
                             <i class="fa-solid fa-phone-volume"></i>
                             <div class="address-info-p">
                                 <p>Bartolomé Mitre 1234, Florida Oeste.</p>
@@ -391,10 +400,9 @@
             </article>
         </section>
     </footer>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./static/js/main.js"></script>
-    <script src="./static/js/navbar.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/navbar.js"></script>
 </body>
 
 </html>

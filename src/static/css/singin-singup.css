@@ -60,13 +60,29 @@ h5 {
 }
 
 body {
+    min-height: 100vh;
+    padding: 5.4em 0 0;
     /*estos espacios hacen que no se superponga con el próximo bloque, asi queda flotando*/
-    background-color: var(--color-terciario);
+    background-color: var(--color-cuaternario);
     font-family: "Nunito", sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
-    margin-top: 9em;
+    height: auto;
+    flex: 1;
+    margin-top: 2.6em;
+    background: linear-gradient(to right top, #0000008a, #0000008a), url('../img/school.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 /************************* Navbar **************************/
@@ -117,7 +133,6 @@ main {
     margin-right: 1rem;
     list-style: none;
     /*elimino los puntos de la lista*/
-
 }
 
 /*formato del estilo del link del menu*/
@@ -128,7 +143,7 @@ main {
     /*todo el texto en mayúscula*/
     width: max-content;
     /*para que no corte el texto de lo que tenga el link, porque si son dos palabras elimina una al achicarlo*/
-    margin: 0 0.6rem;
+    margin: 0 .6rem;
     /*el espacio entre cada palabra del menu*/
 }
 
@@ -147,7 +162,7 @@ main {
     position: absolute;
     top: 73px;
     background-color: var(--color-primario);
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     min-width: 160px;
     z-index: 1;
@@ -193,124 +208,243 @@ main {
     cursor: pointer;
     display: none;
     /*para que no se vea en dispositivios grandes*/
+
 }
 
-/************************* Main **************************/
-/* Estilos para el contenedor del formulario */
-#formulario-container {
-    border-radius: 10px;
-    padding: 20px;
-    max-width: 800px;
-    /* Cambiado a max-width para hacerlo sensible */
-    margin: 0 auto;
-    margin-bottom: 2em;
-    background-color: #f2f2f298;
-}
-
-/* Estilos para el título del formulario */
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    /* Agregado margen inferior para separar del formulario */
-    color: var(--color-cuaternario);
-}
-
-/* Estilos para los elementos del formulario */
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="tel"],
-input[type="email"],
-input[type="date"],
-input[type="number"],
-select,
-textarea {
-    width: 100%;
-    /* Ajuste para compensar el padding */
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid var(--bg-oscuro);
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-    margin-right: 5px;
-}
-
-textarea {
-    resize: vertical;
-}
-
-/* Estilos específicos para algunos campos */
-#nombre,
-#apellido,
-#direccion,
-#telefono,
-#email,
-#fecha_nacimiento,
-#codigo_postal,
-#comentarios {
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid var(--bg-oscuro);
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-/* Estilos para alinear los elementos de género horizontalmente */
-.genero-container {
+/************************************************** Form de Iniciar Sesion *************************************************/
+.contentLogin {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
-}
-
-.genero-container label {
-    margin-right: 10px;
-}
-
-/* Estilos para alinear los elementos de actividades horizontalmente */
-.actividades input[type="checkbox"],
-.actividades label {
-    display: inline-block;
-    margin-right: 10px;
-    /* Ajusta el espacio entre los checkboxes y sus etiquetas según sea necesario */
-}
-
-.conocimientos-container {
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
-
-.conocimientos-container span {
-    text-decoration: underline;
-}
-
-/* estilos boton formulario */
-.boton {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    padding: 10px 20px;
-    background-color: var(--color-primario);
-    /* Cambia el color de fondo según tu preferencia */
+    margin: 4em auto;
+    padding: 40px;
+    /* Hace que el ancho se adapte al contenido */
+    width: fit-content;
+    border-radius: 20px;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+        5px 5px 15px rgba(0, 0, 0, 0.35),
+        inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+        inset 5px 5px 15px rgba(0, 0, 0, 0.35);
+    background: var(--color-primario);
     color: var(--color-cuaternario);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 
-.boton:hover {
+.contentLogin .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contentLogin .form .inputLabel {
+    display: flex;
+    gap: 25px;
+}
+
+.contentLogin .form h2 {
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    font-family: "Roboto Slab", serif;
+}
+
+.contentLogin .form .inputBox,
+.input {
+    position: relative;
+    width: 300px;
+}
+
+.contentLogin .form .inputBox input,
+.contentLogin .form .inputBox select,
+.input__field {
+    padding: 12px 10px 12px 48px;
+    border: none;
+    width: 100%;
+    background: #0b3c9151;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--color-cuaternario);
+    font-weight: 300;
+    font-family: "Nunito", sans-serif;
+    border-radius: 25px;
+    font-size: 1em;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.233),
+        5px 5px 15px rgba(0, 0, 0, 0.35);
+    transition: all .5s ease;
+    outline: none;
+}
+
+.contentLogin .form .inputBox span,
+.contentLogin .form .inputBox label {
+    position: absolute;
+    left: 5px;
+    padding: 12px 10px 12px 48px;
+    pointer-events: none;
+    font-size: 1em;
+    font-weight: 300;
+    transition: 0.5s;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: "Nunito", sans-serif;
+    transition: all .5s ease;
+}
+
+.input__label {
+    position: absolute;
+    top: 0;
+    left: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    transform: translate(10px, 10px);
+    transform-origin: left;
+}
+
+.contentLogin .form .inputBox input:valid~span,
+.contentLogin .form .inputBox input:focus~span,
+.input__field:focus-visible~.input__label,
+.input__field:valid~.input__label {
+    display: none;
+}
+
+.contentLogin .form .inputBox input:valid,
+.contentLogin .form .inputBox input:focus {
+    border: 1px solid #0b3c91aa;
+}
+
+.contentLogin .form .inputBox i,
+.input i {
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    padding: 2px 0;
+    padding-right: 8px;
+    color: var(--color-cuaternario);
+    font-size: 19px;
+    line-height: 25px;
+    border-right: 1px solid var(--color-primario);
+}
+
+.contentLogin .form .inputBox input[type="submit"] {
+    background: var(--color-nav);
+    color: var(--color-cuaternario);
+    padding: 10px 0;
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+        5px 5px 15px rgba(0, 0, 0, 0.35),
+        inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+        inset 5px 5px 15px rgba(0, 0, 0, 0.35);
+    transition: all .3s ease;
+}
+
+.contentLogin .form .inputBox input[type="date"] ~ span {
+    opacity: 0;
+}
+
+.contentLogin .form .inputBox input[type="submit"]:hover {
+    transform: scale(1.05);
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+        5px 5px 15px rgba(0, 0, 0, 0.35),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.35),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.contentLogin .form p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.75em;
+    font-weight: 300;
+}
+
+.contentLogin .form p a {
+    font-weight: 500;
+    color: var(--color-nav);
+}
+
+.contentLogin .form .inputLabel .input .eye-icon-wrapper {
+    position: absolute;
+    top: 0;
+    right: 15%;
+    cursor: pointer;
+}
+
+.contentLogin .form .inputLabel .input i.eye-icon {
+    color: var(--color-cuaternario);
+    font-size: 15px;
+    border: none;
+}
+
+.contentLogin .form .inputLabel .input i.eye-icon:hover {
+    color: var(--color-nav);
+}
+
+.password-modal {
+    position: absolute;
+    left: 16%;
+    top: 71%;
+    background: var(--color-cuaternario);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    color: var(--bg-oscuro);
+}
+
+.requirement {
+    list-style: none;
+    margin-bottom: 0.5rem;
+}
+
+.requirement.checked::before {
+    content: '✔ ';
+    color: green;
+}
+
+.progress-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: red;
+    width: 0%;
+}
+
+.error-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--color-cuaternario);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+#error-message {
+    margin-bottom: 1rem;
+}
+
+#error-modal button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#error-modal button:hover {
     background-color: #0056b3;
-    /* Cambia el color de fondo al pasar el mouse */
 }
 
 /************************************************** Footer *************************************************/
 #footer-content {
+    position: relative;
+    bottom: 0;
+    left: 0;
     width: 100%;
     background-color: var(--color-terciario);
 }
@@ -343,8 +477,8 @@ textarea {
 }
 
 .logo-link a img {
-    width: 12em;
     border-radius: 50%;
+    width: 12em;
 }
 
 .address-info a,
@@ -359,7 +493,7 @@ textarea {
 }
 
 .attention-info {
-    height: 5em;
+    height: 6em;
 }
 
 .address-info-p {
@@ -376,18 +510,16 @@ textarea {
 .copy-footer {
     text-align: center;
     color: var(--color-cuaternario);
-    padding: .5em;
-}
-
-.footer-pages {
-    position: relative;
-    top: 0em;
 }
 
 /***************************************** Media Queries ********************************************/
 @media (max-width: 767px) {
     main {
-        top: 1em;
+        margin-top: -0.5em;
+    }
+
+    .contentLogin .form .inputLabel {
+        flex-direction: column;
     }
 
     footer {
@@ -436,6 +568,7 @@ textarea {
     .nav-menu-link:hover {
         /*para cuando esta activo quede con ese color el link*/
         background: var(--color-primario);
+
     }
 
     .nav-toggle {
@@ -446,8 +579,12 @@ textarea {
     .nav-menu_visible {
         left: 0;
         top: 7vh;
+
     }
 
+    .contentLogin .form .inputBox input[type="date"] ~ span {
+        opacity: 1;
+    }
     /*********************************** Footer ***************************************/
     #footer-content {
         width: 100%;
@@ -490,12 +627,7 @@ textarea {
 
 @media (min-width: 768px) and (max-width: 883px) {
     main {
-        position: relative;
-        top: 1em;
-    }
-
-    footer {
-        top: 1em;
+        margin-top: -.2em;
     }
 
     /************************ Navbar *********/
@@ -551,13 +683,8 @@ textarea {
     .nav-menu_visible {
         left: 0;
         top: 7vh;
-    }
 
-    .error {
-        color: red;
-        font-size: 0.8em;
     }
-    
 
     /*********************************** Footer ***************************************/
     .footer-info {

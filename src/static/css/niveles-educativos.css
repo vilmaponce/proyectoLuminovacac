@@ -169,6 +169,10 @@ body {
     transition: all .3s ease;
 }
 
+.dropdown-content li a i {
+    margin-right: 5px;
+}
+
 .nav-menu-link:hover {
     border-radius: 5px;
     font-weight: 700;
@@ -195,132 +199,139 @@ body {
 }
 
 /************************************************************** Main **************************/
-.sport-content,
-.art-content,
-.academic-content,
-.voluntariado-content,
-.idiomas-content,
-.huerta-content {
+
+.levels-banner {
+    height: 35em;
     width: 100%;
-    height: auto;
-    margin-top: 1em;
-    padding: 3em 1em;
-    text-align: center;
-    background-color: var(--color-terciario);
-}
 
-.sport-content h2,
-.art-content h2,
-.academic-content h2,
-.voluntariado-content h2,
-.idiomas-content h2,
-.huerta-content h2 {
-    text-align: center;
-    font-size: 4em;
-    color: var(--color-cuaternario);
-    position: relative;
-}
-
-.icono-animado {
+    background-position: center;
+    background-size: cover;
     position: absolute;
-    animation: rebota 1s alternate infinite ease-out;
-    margin-left: .5em;
+    top: 8em;
+    left: 0;
 }
 
-.contenedor-translucido {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 1em auto;
+.levels-banner-initial {
+    background-image: url('../img/inicial2.jpg');
 }
 
-.card {
-    width: 26em;
-    height: auto;
-    padding: 1em;
-    margin: 1.2em;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: .6em;
-
-    transition: transform 0.3s ease;
+.levels-banner-primary {
+    background-image: url('../img/primaria8.png');
 }
 
-.voluntariado-content .card,
-.huerta-content .card {
-    width: 45em;
+.levels-banner-secondary {
+    background-image: url('../img/secundario.jpg');
 }
 
-.card:hover {
-    transform: scale(1.1);
-}
+.banner-information {
+    background-color: var(--color-primario);
+    height: 45%;
+    border-top-left-radius: 100%;
 
-.card img {
-    width: 100%;
-    border-radius: .6em;
-}
+    position: relative;
+    top: 310px;
+    right: 0px;
 
-.card h3 {
-    font-size: 2em;
-    color: var(--bg-color);
-}
-
-.card-content {
     display: flex;
     flex-direction: column;
-    text-align: start;
-    gap: .8em;
-    font-weight: normal;
-}
-
-.card-content p:first-child {
-    text-align: center;
-    margin-bottom: .5em;
-}
-
-.card-content p span {
-    font-weight: bold;
-}
-
-.voluntariado-content ul,
-.idiomas-content ul,
-.huerta-content ul {
-    /* Arriba | Derecha | Abajo | Izquierda */
-    margin: 0 .5em 0 1em;
-    font-family: "Roboto Slab", serif;
-}
-
-.boton {
-    display: inline-block;
-    padding: .625em 1.25em;
-    background-color: var(--color-primario);
+    justify-content: center;
+    align-items: flex-end;
+    text-align: right;
     color: var(--color-cuaternario);
-    border-radius: .3em;
-    font-weight: 700;
+}
+
+.primary-banner-information {
+    background-color: var(--color-secundario);
+}
+
+.secondary-banner-information {
+    border-top: 15px solid var(--color-secundario);
+}
+
+.banner-information h1,
+.title-secondary-mision {
+    padding: 0 5em .7em 0;
+    font-size: 2em;
     text-transform: uppercase;
-    text-decoration: none;
-
-    transition: all 0.5s ease;
 }
 
-.boton:hover {
-    background-color: #0056b3;
-    transform: scale(1.1);
+.banner-information p {
+    width: 60%;
+    padding-right: 1.5em;
+    font-size: 1.3em;
 }
 
-@keyframes rebota {
-    0% {
-        top: 0;
-        height: 70px;
-    }
+.levels-content {
+    position: relative;
+    top: 38em;
+}
 
-    50% {
-        top: -30px;
-    }
+.second {
+    top: 45em;
+}
 
-    100% {
-        top: 0;
-    }
+.level-container {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 1em;
+    gap: 3em;
+}
+
+.level-container img {
+    max-width: 500px;
+    border-radius: 5px;
+}
+
+.initial-proposals {
+    font-size: 1.2em;
+    gap: 1.2em;
+}
+
+.initial-proposals h3 {
+    text-transform: uppercase;
+    font-size: 1em;
+    color: var(--color-secundario);
+}
+
+.level-carousel {
+    position: relative;
+    top: 42em;
+    left: 0;
+
+    display: flex;
+}
+
+.level-carousel img {
+    width: 25%;
+    max-height: 250px;
+}
+
+.title-secondary-mision {
+    color: var(--color-secundario);
+}
+
+.secondary-mision {
+    text-align: center;
+}
+
+.info-secondary-mision {
+    width: 80%;
+    height: 14em;
+
+    margin: 2em auto;
+    padding: 0 1em;
+
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-template-rows: repeat(2, 50%);
+    gap: 3em;
+}
+
+.info-secondary-mision p {
+    text-align: justify;
 }
 
 /************************************************** Footer *************************************************/
@@ -332,6 +343,7 @@ body {
 .footer-container {
     display: flex;
     flex-flow: column nowrap;
+
     width: 100%;
     gap: 2em;
 }
@@ -342,6 +354,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 5em;
+
     padding: 1.5em;
     background-color: var(--bg-oscuro);
 }
@@ -391,8 +404,13 @@ body {
     padding: .5em;
 }
 
+.footer-pages {
+    position: relative;
+    top: 50em;
+}
+
 /* Media Queries */
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
 
     /************************ Navbar *********/
     .header {
@@ -450,37 +468,138 @@ body {
 
     }
 
-      /************************************* Main *****************************/
+    /* Paginas de Niveles */
+    .levels-banner {
+        height: auto;
+        width: 100%;
+        position: relative;
+        top: .8em;
+    }
+
+    .levels-banner-initial {
+        background-image: none;
+    }
+
+    .levels-banner-primary {
+        background-image: none;
+    }
+
+    .levels-banner-secondary {
+        background-image: none;
+    }
+
+    .banner-information {
+        background-color: var(--color-primario);
+        border-top-left-radius: 0%;
+
+        position: relative;
+        top: 0px;
+        left: 0px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: var(--color-cuaternario);
+    }
+
+    .primary-banner-information {
+        background-color: var(--color-secundario);
+    }
+
+    .secondary-banner-information {
+        border-top: 15px solid var(--color-secundario);
+        border-bottom: 15px solid var(--color-secundario);
+    }
+
+    .banner-information h1 {
+        padding: .5em 0em;
+    }
+
+    .banner-information p {
+        width: 100%;
+        padding: .5em .8em;
+        margin-bottom: 1em;
+        font-size: 1.1em;
+        text-align: justify;
+    }
+
+    .levels-content {
+        position: relative;
+        top: 0px;
+        width: 100vw;
+
+        text-align: center;
+    }
+
+    .second {
+        top: 0em;
+    }
+
+    .level-container {
+        display: inline-block;
+
+        margin: 1em;
+        padding: .2em;
+    }
+
+    .level-container img {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .initial-proposals {
+        font-size: 1.1em;
+        text-align: justify;
+        margin: 1em 0em;
+        gap: 1em;
+    }
+
+    .initial-proposals h3 {
+        text-transform: uppercase;
+        font-size: 1em;
+        color: var(--color-secundario);
+    }
+
+    .level-carousel {
+        position: relative;
+        top: 0em;
+
+        display: inline-block;
+        margin-left: 4px;
+        padding: 0px;
+        gap: 0px;
+    }
+
+    .level-carousel img {
+        width: 49%;
+        height: 100%;
+    }
+
+    .secondary-mision {
+        text-align: center;
+    }
+
+    .info-secondary-mision {
+        width: 100vw;
+        height: auto;
+
+        margin: 1em auto;
+        padding: 0 .8em;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        font-size: 1.1em;
+    }
+
+    /************************************ Footer *****************************/
+    /* Main */
     .sport-content {
         width: 100%;
         height: 100%;
-    }
-    .sport-content,
-    .art-content,
-    .academic-content,
-    .voluntariado-content,
-    .idiomas-content,
-    .huerta-content {
-        margin-top: -1.3em;
-        
-    }
-    .card:hover {
-        transform: scale(1.05);
-    }
-    .sport-content h2,
-    .art-content h2,
-    .academic-content h2,
-    .voluntariado-content h2,
-    .idiomas-content h2,
-    .huerta-content h2 {
-        text-align: center;
-        font-size: 2.5em;
-        color: var(--color-cuaternario);
-        position: relative;        
-    }
-
-    .voluntariado-content h2 {
-        font-size: 2em;
     }
 
     /************************************ Footer *****************************/
@@ -508,7 +627,7 @@ body {
 
     .footer-info {
         display: inline-block;
-        color: var(--color-primario);
+        color: var(--color-secundario);
     }
 
     .logo-link {
@@ -546,9 +665,14 @@ body {
         font-size: .9em;
         padding-bottom: 1em;
     }
+
+    .footer-pages {
+        position: relative;
+        top: 0em;
+    }
 }
 
-@media (min-width: 768px) and (max-width: 883px) {
+@media only screen and (min-width: 768px) and (max-width: 1400px) {
 
     /************************ Navbar *********/
     .header {
@@ -588,120 +712,147 @@ body {
     .nav-menu-item {
         line-height: 6vh;
     }
+
     .nav-menu-link:hover {
         /*para cuando esta activo quede con ese color el link*/
         background: var(--color-primario);
 
     }
+
     .nav-toggle {
         display: block;
         /*para que aparezca la hamburguesa*/
-    }    
+    }
+
     .nav-menu_visible {
         left: 0;
         top: 7vh;
+
     }
 
-  /************************************* Main *****************************/
-    
-    .sport-content,
-    .art-content,
-    .academic-content,
-    .voluntariado-content,
-    .idiomas-content,
-    .huerta-content {
-        margin-top: 0;
-    }
-    .card:hover {
-        transform: scale(1.05);
-    }
-    .sport-content {
-        width: 100%;
-        height: 100%;
-    }
-
-    /************************************* Footer *****************************/
-    .footer-access {
-        justify-content: space-between;
-        align-items: center;
-        gap: 1em;
-    }
-
-    .footer-link a {
-        margin: 1em auto;
-    }
-
-    .footer-link h4 {
-        font-size: 1.2em;
-    }
-
-    .footer-info {
+    .levels-container {
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 2em;
+        margin: 1em;
     }
 
-    .footer-info h5 {
-        font-size: 1.2em;
-    }
-
-    .logo-link {
-        margin: 0px;
-        align-self: center;
-    }
-
-    .logo-link img {
-        width: 12em;
-    }
-
-    .address-info,
-    .attention-info {
-        gap: 15px;
-        font-size: 1.2em;
-    }
-
-    .attention-info {
-        height: 6.5em;
-    }
-
-    .copy-footer {
-        font-size: 1em;
-        font-weight: normal;
-        padding-bottom: 1em;
-    }
-
-    .footer-pages {
-        position: relative;
-        top: 0em;
-    }
-}
-
-@media (min-width: 884px) and (max-width: 1300px) {
-
-    /* Main */
-    .sport-content {
+    .levels-banner {
+        height: 35em;
         width: 100%;
-        height: 100%;
+
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        top: 6em;
     }
 
-    .sport-content,
-    .art-content,
-    .academic-content,
-    .voluntariado-content,
-    .idiomas-content,
-    .huerta-content {
-        margin-top: 2em;
+    .levels-banner-initial {
+        background-image: url('../img/inicial2.jpg');
     }
 
-    .sport-content h2,
-    .art-content h2,
-    .academic-content h2,
-    .voluntariado-content h2,
-    .idiomas-content h2,
-    .huerta-content h2 {
-        font-size: 3em;
+    .levels-banner-primary {
+        background-image: url('../img/primaria.jpg');
+    }
+
+    .levels-banner-secondary {
+        background-image: url('../img/secundario.jpg');
+    }
+
+    .banner-information {
+        background-color: var(--color-primario);
+        height: 45%;
+        border-top-left-radius: 100%;
+
+        position: relative;
+        top: 310px;
+        right: 0px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        text-align: right;
+        color: var(--color-cuaternario);
+    }
+
+    .primary-banner-information {
+        background-color: var(--color-secundario);
+    }
+
+    .secondary-banner-information {
+        border-top: 15px solid var(--color-secundario);
+    }
+
+    .banner-information h1 {
+        padding: .5em 1.5em;
+        font-size: 2em;
+        text-transform: uppercase;
+    }
+
+    .banner-information p {
+        width: 80%;
+        padding-right: 1.5em;
+        font-size: 1.2em;
+    }
+
+    .levels-content {
+        position: relative;
+        top: 38em;
+    }
+
+    .second {
+        top: 45em;
+    }
+
+    .level-container {
+        display: flex;
+        flex-direction: row;
+
+        padding: 1em;
+        gap: 3em;
+    }
+
+    .initial-proposals {
+        font-size: 1.5em;
+    }
+
+    .initial-proposals h3 {
+        font-size: 1.2em;
+    }
+
+    .level-carousel {
+        position: relative;
+        top: 42em;
+
+        display: inline-block;
+        margin: 0px 4px;
+        padding: 0px;
+        gap: 0px;
+    }
+
+    .level-carousel img {
+        width: 49%;
+        height: auto;
+    }
+
+
+    .secondary-mision {
+        text-align: center;
+    }
+
+    .info-secondary-mision {
+        width: 100vw;
+        height: auto;
+
+        margin: 1em auto;
+        padding: 0 .8em;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        font-size: 1.5em;
     }
 
     /************************* Footer **************************/
@@ -747,6 +898,6 @@ body {
 
     .footer-pages {
         position: relative;
-        top: 0em;
+        top: 48em;
     }
 }

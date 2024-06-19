@@ -11,6 +11,7 @@ const luminovaController = require("../controllers/luminovaController");
 // 3 - Realizamos las solicitudes con la lógica que proviene de inscripcionController.js para cada peticion 
 router.get("/saludo", luminovaController.saludo);
 router.post("/crear-usuario", luminovaController.createUser);
+router.get("/acceder", luminovaController.acceder);
 
 // 4 - Exportamos el módulo
 module.exports = router;

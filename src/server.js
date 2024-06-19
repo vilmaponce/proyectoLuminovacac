@@ -7,7 +7,7 @@ const app = express();
 // 3- Declaración del puerto
 const PORT = 3000;
 // 4- Llamada al modulo propio
-const inscripcionRouter = require("./routes/luminovaRouter");
+const inscripcionRouter = require("../routes/luminovaRouter");
 // 5- Utilizasción del middlewere express.json
 /** Este middleware nos permite analizar los cuerpos 
  * de las solicitudes entrantes con formato JSON 

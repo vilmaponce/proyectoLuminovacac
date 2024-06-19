@@ -70,7 +70,8 @@ body {
 /* Comenza el alto de los nav bar al hacer direccionar con <a href=""> */
 section[id],
 article[id] {
-    scroll-margin-top: 14vh; /* Mismo height que el header */
+    scroll-margin-top: 14vh;
+    /* Mismo height que el header */
 }
 
 /************************* Navbar **************************/
@@ -145,13 +146,14 @@ article[id] {
     position: relative;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    cursor: pointer;
 }
 
 .dropdown-content {
     position: absolute;
-    top: 73px;
+    top: 80px;
     background-color: var(--color-primario);
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     min-width: 160px;
     z-index: 1;
@@ -173,6 +175,10 @@ article[id] {
     display: block;
     text-align: left;
     transition: all .3s ease;
+}
+
+.dropdown-content li a i {
+    margin-right: 5px;
 }
 
 .nav-menu-link:hover {
@@ -306,7 +312,7 @@ article[id] {
 .carousel {
     position: relative;
     width: 30vw;
-    height: 19em;
+    height: 22em;
     margin-top: 3em;
     /* Oculta los slide que no deben mostrarse */
     overflow: hidden;
@@ -536,7 +542,7 @@ article[id] {
 
 .container {
     top: 0;
-    width:300px;
+    width: 300px;
     padding: 40px;
     margin-top: 3em;
     background-color: var(--color-terciario);
@@ -590,21 +596,32 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: lightcoral;
 }
+
 /*--------- boton formulario------------------- */
 .contact-link {
-    display: block; /* Hace que el enlace ocupe toda la anchura del contenedor */
-    background-color: #007bff; /* Color de fondo azul */
-    color: #fff; /* Color de texto blanco */
-    padding: 10px 20px; /* Espacio alrededor del texto */
-    text-align: center; /* Centra el texto horizontalmente */
-    text-decoration: none; /* Elimina la subrayado del enlace */
-    border-radius: 5px; /* Bordes redondeados */
-    margin-top: 10px; /* Espacio superior */
+    display: block;
+    /* Hace que el enlace ocupe toda la anchura del contenedor */
+    background-color: #007bff;
+    /* Color de fondo azul */
+    color: #fff;
+    /* Color de texto blanco */
+    padding: 10px 20px;
+    /* Espacio alrededor del texto */
+    text-align: center;
+    /* Centra el texto horizontalmente */
+    text-decoration: none;
+    /* Elimina la subrayado del enlace */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    margin-top: 10px;
+    /* Espacio superior */
 }
 
 .contact-link:hover {
-    background-color: #0056b3; /* Cambia el color de fondo al pasar el ratón sobre el enlace */
+    background-color: #0056b3;
+    /* Cambia el color de fondo al pasar el ratón sobre el enlace */
 }
+
 /************************* Sección de Tarjetas Niveles **************************/
 
 #institucional,
@@ -964,9 +981,16 @@ input[type="submit"]:hover {
 /************************* MEDIA QUERIES **************************/
 @media only screen and (max-width: 600px) {
 
+    /* Comenza el alto de los nav bar al hacer direccionar con <a href=""> */
+    section[id],
+    article[id] {
+        scroll-margin-top: 10vh;
+        /* Mismo height que el header */
+    }
+
     /************************ Navbar *********/
     .header {
-        width:100vw;
+        width: 100vw;
         height: 10vh;
         padding-left: 1rem;
     }
@@ -1058,6 +1082,7 @@ input[type="submit"]:hover {
     .carousel {
         position: relative;
         width: 80vw;
+        height: 20em;
         margin-top: 1em;
     }
 
@@ -1212,6 +1237,13 @@ input[type="submit"]:hover {
 }
 
 @media only screen and (min-width: 601px) and (max-width: 750px) {
+
+    /* Comenza el alto de los nav bar al hacer direccionar con <a href=""> */
+    section[id],
+    article[id] {
+        scroll-margin-top: 10vh;
+        /* Mismo height que el header */
+    }
 
     /************************ Navbar *********/
     .header {
@@ -1427,8 +1459,8 @@ input[type="submit"]:hover {
     /**CSS carrusel  */
     .carousel {
         position: relative;
-        width: 70vw;
-        height: 25em;
+        width: 37em;
+        height: 23em;
     }
 
     /* Posicionamiento del texto sobre la imagen */

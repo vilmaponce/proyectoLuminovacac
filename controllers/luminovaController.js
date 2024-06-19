@@ -16,7 +16,7 @@ const saludo = (req, res) => {
 // Petición para CREAR USUARIO
 const createUser = (req, res) => {
     // Clave string que usara MySQL
-    const sql = "INSERT INTO `colegio-luminova`.alumno (doc, nombre, apellido, nacimiento, calle, num_calle, ciudad, cp, escolaridad, clave) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    const sql = "INSERT INTO `colegio-luminova`.alumno (doc, nombre, apellido, nacimiento, calle, num_calle, ciudad, cp, escolaridad, clave, correo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     // Datos arbitrarios para realizar la prueba
     const doc = 41752175;
@@ -29,6 +29,7 @@ const createUser = (req, res) => {
     const cp = 1708;
     const escolaridad = "Nivel Primario";
     const clave = "hola1234";
+    const correo = "agus@correo.com"
 
     // Con el método .query que proporciona mysql2 generamos la sentenfcia que enviaremos a la BBDD MySql
     db.query(sql, [doc, nombre, apellido, nacimiento, calle, num_calle, ciudad, cp, escolaridad, clave],(err, result) => {
@@ -38,18 +39,37 @@ const createUser = (req, res) => {
 };
 
 // Petición para INICIAR SESIÓN
-// router.get();
+const acceder  = (req, res) => {
+    // Extraemos de la URL el n° de doc y clave que ingrese el usuario
+    const { doc, clave } = req.params;
+
+    // Clave que usará MySQL
+    // CLAVE QUE MUESTRA TODO EL REGISTRO
+    const sql = "SELECT * FROM `colegio-luminova`.alumno WHERE doc = ? AND clave = ?;"
+
+    // Mostramos los datos del alumno encontrado
+    db.query(sql, [doc, clave], (err, result) => {
+        // Si el usuario no es compatible con esos datos
+        if (err) throw err;
+        // Sino, muestra el registro
+        res.json({message: "¡Inicio de Sesión con éxito!"})
+    });
+};
+
 // Petición para INSCRIPCIÓN A CURSO
 // router.post();
+
 // Petición para VER INSCRIPCIONES
 // router.get();
+
 // Petición para ELIMINAR INSCRIPCIÓN
 // router.delete();
+
 // Petición para EDITAR DATOS DE USUARIO
-// router.put();
 
 // 3 - Exportamos las peticiones a utilizar
 module.exports = {
     saludo,
-    createUser
+    createUser,
+    acceder
 };
