@@ -3,12 +3,12 @@
  ESPECÍFICO PARA CADA OPCIÓN.
  */
 
-// 1 - Importamos el módulo express
+// 1 - Importamos el módulo express y el módulo del controlador 
 const express = require("express");
+const luminovaController = require("../controllers/luminovaController");
 // 2 - Instanciamos Router de express
 const router = express.Router();
-const luminovaController = require("../controllers/luminovaController");
-// 3 - Realizamos las solicitudes con la lógica que proviene de inscripcionController.js para cada peticion 
+// 3 - Realizamos las solicitudes con la lógica que proviene de luminovaController.js para cada peticion 
 router.get("/saludo", luminovaController.saludo);
 router.post("/crear-usuario", luminovaController.createUser);
 router.get("/acceder", luminovaController.acceder);
