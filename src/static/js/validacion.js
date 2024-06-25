@@ -1,189 +1,282 @@
+// JS para la validación de contraseña
+
+// Captamos el formulario
+const btnFormulario = document.getElementById('registerFormBtn');
+// Captamos los inputs
+const nombre = document.getElementById("nombre").value;
+const apellido = document.getElementById("apellido").value;
+const dni = document.getElementById("dni").value;
+const nacimiento = document.getElementById("nacimiento").value;
+const email = document.getElementById("email").value;
+const telefono = document.getElementById("telefono").value;
+const calle = document.getElementById("calle").value;
+const num = document.getElementById("numero").value;
+const ciudad = document.getElementById("ciudad").value;
+const cp = document.getElementById("codigo_postal").value;
+const escolaridad = document.getElementById("escolaridad").value;
+const clave = document.getElementById('password');
+// Expresión regular para validar los campos
+let soloLetras = /^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+let soloNumeros = /^[0-9]+$/;
+let emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Función para validar el nombre
 function validarNombre() {
-    console.log("Validando nombre...");
-    // Obtener el valor del campo de entrada de nombre
-    let nombre = document.getElementById("nombre").value;
-    // Expresión regular para validar que solo contenga letras (mayúsculas o minúsculas)
-    let nombrePattern = /^[A-Za-z]+$/;
-    // Comprobar si el nombre está vacío o no coincide con el patrón
-    if (nombre.trim() === "" || !nombrePattern.test(nombre)) {
-        document.getElementById("errorNombre").innerText = "Por favor, ingresa un nombre válido (solo letras).";
-        document.getElementById("errorNombre").style.color = "red";
-    } else {
-        // Limpiar el mensaje de error si el nombre es válido
-        document.getElementById("errorNombre").innerText = "";
-    }
-}
+    if (!soloLetras.test(nombre)) {
+        Swal.fire({
+            text: "Por favor, ingrese un nombre válido (solo letras).",
+            icon: "error"
+        });
+    };
+};
 
 // Función para validar el apellido
 function validarApellido() {
-    // Obtener el valor del campo de entrada de apellido
-    let apellido = document.getElementById("apellido").value;
-    // Expresión regular para validar que solo contenga letras (mayúsculas o minúsculas)
-    let apellidoPattern = /^[A-Za-z]+$/;
-    if (apellido.trim() === "" || !apellidoPattern.test(apellido)) {
+    if (soloLetras.test(apellido)) {
         // Mostrar un mensaje de error si el apellido no es válido
-        document.getElementById("errorApellido").innerText = "Por favor, ingresa un apellido válido (solo letras).";
-        document.getElementById("errorApellido").style.color = "red";
-    } else {
-        // Limpiar el mensaje de error si el apellido es válido
-        document.getElementById("errorApellido").innerText = "";
-    }
-}
+        Swal.fire({
+            text: "Por favor, ingrese un apellido válido (solo letras).",
+            icon: "error"
+        });
+    };
+};
 
-// Función para validar la calle
-function validarCalle() {
-    // Obtener el valor del campo de entrada de calle
-    let calle = document.getElementById("calle").value;
-    // Expresión regular para validar que solo contenga letras y espacios
-    let soloLetrasPattern = /^[a-zA-Z\s]*$/;
-    if (calle.trim() === "" || !soloLetrasPattern.test(calle)) {
-        // Mostrar un mensaje de error si la calle no es válida
-        document.getElementById("errorCalle").innerText = "Por favor, ingresa una calle válida (solo letras).";
-        document.getElementById("errorCalle").style.color = "red";
-    } else {
-        document.getElementById("errorCalle").innerText = "";
-    }
-}
+// Función para validar el DNI
+function validarDNI() {
+   if (soloNumeros.test(dni)) {
+        // Mostrar un mensaje de error si el DNI no es válido
+        Swal.fire({
+            text: "Por favor, ingrese un DNI válido (solo números).",
+            icon: "error"
+        });
+    };
+};
 
-// Función para validar el número de la dirección
-function validarNumero() {
-    // Obtener el valor del campo de entrada de número
-    let numero = document.getElementById("numero").value;
-    // Expresión regular para validar que solo contenga números
-    let soloNumerosPattern = /^\d+$/; // Expresión regular para solo números
-    if (numero.trim() === "" || !soloNumerosPattern.test(numero)) {
-        // Mostrar un mensaje de error si el número no es válidos
-        document.getElementById("errorNumero").innerText = "Por favor, ingresa un número válido (solo números).";
-        document.getElementById("errorNumero").style.color = "red";
-    } else {
-        // Limpiar el mensaje de error si el número es válido
-        document.getElementById("errorNumero").innerText = "";
-    }
-}
-
-// Función para validar la ciudad
-function validarCiudad() {
-    // Obtener el valor del campo de entrada de ciudad
-    let ciudad = document.getElementById("ciudad").value;
-    // Expresión regular para validar que solo contenga letras y espacios
-    let soloLetrasPattern = /^[a-zA-Z\s]*$/;
-    // Comprobar si la ciudad está vacía o no coincide con el patrón
-    if (ciudad.trim() === "" || !soloLetrasPattern.test(ciudad)) {
-        // Mostrar un mensaje de error si la ciudad no es válida 
-        document.getElementById("errorCiudad").innerText = "Por favor, ingresa una ciudad válida (solo letras).";
-        document.getElementById("errorCiudad").style.color = "red";
-    } else {
-        // Limpiar el mensaje de error si la ciudad es válida
-        document.getElementById("errorCiudad").innerText = "";
-    }
-}
-
-// Función para validar el código postal
-function validarCodigoPostal() {
-    // Obtener el valor del campo de entrada de código postal
-    let codigoPostal = document.getElementById("codigo_postal").value;
-    // Expresión regular para validar que solo contenga números
-    let soloNumerosPattern = /^\d+$/; // Expresión regular para solo números
-    if (codigoPostal.trim() === "" || !soloNumerosPattern.test(codigoPostal)) {
-        // Mostrar un mensaje de error si el código postal no es válido
-        document.getElementById("errorCodigoPostal").innerText = "Por favor, ingresa un código postal válido (solo números).";
-        document.getElementById("errorCodigoPostal").style.color = "red";
-    } else {
-        // Limpiar el mensaje de error si el código postal es válido
-        document.getElementById("errorCodigoPostal").innerText = "";
-    }
-}
+// Función para validar si se cargó la fecha de nacimiento
+function validarNacimiento() {
+    if (nacimiento) {
+        // Mostrar un mensaje de error si el campo está vacío
+        Swal.fire({
+            text: "Por favor, ingrese la fecha de nacimiento.",
+            icon: "error"
+        });
+    };
+};
 
 // Función para validar el correo electrónico
 function validarEmail() {
-    // Obtener el valor del campo de entrada de correo electrónico
-    let email = document.getElementById("email").value;
-    // Expresión regular para validar el formato del correo electrónico
-    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    // Comprobar si el correo electrónico no coincide con el patrón
-    if (!emailPattern.test(email)) {
-        // Mostrar un mensaje de error si el correo electrónico no es válido
-        document.getElementById("errorEmail").innerText = "Por favor, ingresa un correo electrónico válido.";
-        document.getElementById("errorEmail").style.color = "red";
-    } else {
-        // Limpiar el mensaje de error si el correo electrónico es válido
-        document.getElementById("errorEmail").innerText = "";
-    }
-}
+    if (emailValido.test(email)) {
+        // Mostrar un mensaje de error si el correo no es válido
+        Swal.fire({
+            text: "Por favor, ingrese un correo electrónico válido.",
+            icon: "error"
+        });
+    };
+};
 
 // Función para validar el teléfono
 function validarTelefono() {
-    // Obtener el valor del campo de entrada de teléfono
-    let telefono = document.getElementById("telefono").value;
-     // Expresión regular para validar que solo contenga números
-    let telefonoPattern = /^\d+$/; // Expresión regular para solo números
-     // Comprobar si el teléfono está vacío o no coincide con el patrón
-    if (telefono.trim() === "" || !telefonoPattern.test(telefono)) {
+    if (soloNumeros.test(telefono)) {
         // Mostrar un mensaje de error si el teléfono no es válido
-        document.getElementById("errorTelefono").innerText = "Por favor, ingresa un número de teléfono válido (solo números).";
-        document.getElementById("errorTelefono").style.color = "red";
-    } else {
-        document.getElementById("errorTelefono").innerText = "";
-    }
-}
+        Swal.fire({
+            text: "Por favor, ingrese un teléfono válido.",
+            icon: "error"
+        });
+    };
+};
 
-// Función para validar actividades
-function validarActividades() {
-    // Variable para verificar si se han seleccionado actividades
-    let actividadesSeleccionadas = false;
-    // Obtener todas las actividades seleccionadas mediante checkboxes
-    let actividades = document.querySelectorAll('.actividades input[type="checkbox"]');
-    // Iterar sobre las actividades para comprobar si alguna está seleccionada
-    actividades.forEach(function (actividad) {
-        if (actividad.checked) {
-            actividadesSeleccionadas = true;
+// Función para validar la calle
+function validarCalle() {
+    if (soloLetras.test(calle)) {
+        // Mostrar un mensaje de error si la calle no es válida
+        Swal.fire({
+            text: "Por favor, ingrese una calle válida (solo letras).",
+            icon: "error"
+        });
+    };
+};
+
+// Función para validar el número de la dirección
+function validarNumero() {
+    if (soloNumeros.test(numero) || soloNumeros.test(numero).length < 2) {
+        // Mostrar un mensaje de error si el número no es válidos
+        Swal.fire({
+            text: "Por favor, ingrese una altura válida.",
+            icon: "error"
+        });
+    };
+};
+
+// Función para validar la ciudad
+function validarCiudad() {
+    if (soloLetras.test(ciudad)) {
+        // Mostrar un mensaje de error si la ciudad no es válida 
+        Swal.fire({
+            text: "Por favor, ingrese una ciudad válida.",
+            icon: "error"
+        });
+    };
+};
+
+// Función para validar el código postal
+function validarCodigoPostal() {
+    if (soloNumeros.test(cp)) {
+        // Mostrar un mensaje de error si el código postal no es válido
+        Swal.fire({
+            text: "Por favor, ingrese un código postal válido.",
+            icon: "error"
+        });
+    };
+};
+
+// Función para validar si se seleccionó nivel escolar
+function validarEscolaridad() {
+    if (escolaridad) {
+        // Mostrar un mensaje de error si el campo está vacío
+        Swal.fire({
+            text: "Por favor, seleccione un nivel de escolaridad.",
+            icon: "error"
+        });
+    };
+};
+
+// Funcionar que valida la contraseña
+function validarClave() {
+    // Capturamos el modal con los requerimientos
+    const passwordModal = document.getElementById('password-modal');
+    // Requerimientos de la contraseña que se encuentra en el modal (<li>)
+    const passwordRequirements = {
+        length: document.getElementById('length'),
+        uppercase: document.getElementById('uppercase'),
+        number: document.getElementById('number'),
+        special: document.getElementById('special')
+    };
+    // Capturamos el div que mostrará el progreso de cumplimiento de los requisitos
+    const passwordProgress = document.getElementById('password-progress');
+
+    // Comenzamos a escuchar el ingreso del dato en el input
+    clave.addEventListener('input', function () {
+        const value = clave.value;
+        let validCount = 0;
+
+        // Chequeamos longitud de caractéres
+        if (value.length >= 8) {
+            passwordRequirements.length.classList.add('checked');
+            validCount++;
+        } else {
+            passwordRequirements.length.classList.remove('checked');
+        };
+
+        //  Chequeamos que contenga una mayúscula
+        if (/[A-Z]/.test(value)) {
+            passwordRequirements.uppercase.classList.add('checked');
+            validCount++;
+        } else {
+            passwordRequirements.uppercase.classList.remove('checked');
+        };
+
+        //  Chequeamos que contenga un número
+        if (/[0-9]/.test(value)) {
+            passwordRequirements.number.classList.add('checked');
+            validCount++;
+        } else {
+            passwordRequirements.number.classList.remove('checked');
+        };
+
+        // Chequeamos que contenga algun caracter especial
+        if (/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
+            passwordRequirements.special.classList.add('checked');
+            validCount++;
+        } else {
+            passwordRequirements.special.classList.remove('checked');
+        };
+
+        // Actualizamos la barra de progreso dividida en 4 niveles de aprobación
+        const progress = (validCount / 4) * 100;
+        passwordProgress.style.width = `${progress}%`;
+
+        if (validCount === 4) {
+            passwordProgress.style.backgroundColor = 'green';
+        } else if (validCount >= 2) {
+            passwordProgress.style.backgroundColor = 'yellow';
+        } else {
+            passwordProgress.style.backgroundColor = 'red';
         }
-    });
-    // Comprobar si no se han seleccionado actividades
-    if (!actividadesSeleccionadas) {
-        // Mostrar un mensaje de error si no se han seleccionado actividades
-        document.getElementById("errorActividades").innerText = "Por favor, selecciona al menos una actividad.";
-        document.getElementById("errorActividades").style.color = "red";
-    } else {
-         // Limpiar el mensaje de error si se han seleccionado actividades
-        document.getElementById("errorActividades").innerText = "";
-    }
-}
+
+        // Mostramos el modal con los requerimientos
+        passwordModal.style.display = 'block';
+
+        // Si se vacía el imput, ocultamos el modal
+        if (value.length == 0) {
+            passwordModal.style.display = 'none';
+        };
+    })
+};
 
 // Agregar controladores de eventos para los campos del formulario
+/*
 document.getElementById("nombre").addEventListener("input", validarNombre);
 document.getElementById("apellido").addEventListener("input", validarApellido);
+document.getElementById("dni").addEventListener("input", validarDNI);
+document.getElementById("nacimiento").addEventListener("input", validarNacimiento);
+document.getElementById("email").addEventListener("input", validarEmail);
+document.getElementById("telefono").addEventListener("input", validarTelefono);
 document.getElementById("calle").addEventListener("input", validarCalle);
 document.getElementById("numero").addEventListener("input", validarNumero);
 document.getElementById("ciudad").addEventListener("input", validarCiudad);
 document.getElementById("codigo_postal").addEventListener("input", validarCodigoPostal);
-document.getElementById("email").addEventListener("input", validarEmail);
-document.getElementById("telefono").addEventListener("input", validarTelefono);
+document.getElementById("escolaridad").addEventListener("input", validarEscolaridad);
+document.getElementById("password").addEventListener("input", validarClave);
+*/
 
 // Agregar controlador de evento al formulario para validar y enviar el formulario
-document.getElementById("registroForm").addEventListener("submit", function (event) {
-    // Detener el envío del formulario
-    event.preventDefault();
-
+btnFormulario.addEventListener("click", () => {
     // Ejecutar todas las funciones de validación
     validarNombre();
     validarApellido();
+    validarDNI();
+    validarNacimiento();
+    validarEmail();
+    validarTelefono();
     validarCalle();
     validarNumero();
     validarCiudad();
     validarCodigoPostal();
-    validarEmail();
-    validarTelefono();
-    validarActividades();
+    validarEscolaridad();
+    validarClave();
 
-    // Si todos los campos son válidos, enviar el formulario
+    // Corroboramos que no haya campos vacíos
+    if (!nombre ||
+        !apellido ||
+        !dni ||
+        !email ||
+        !telefono ||
+        !calle ||
+        !num ||
+        !ciudad ||
+        !cp ||
+        !clave
+    ) {
+        Swal.fire({
+            text: "Por favor, complete todos los campos.",
+            icon: "error"
+        });
+        return;
+    };
 
-    let formularioValido = document.querySelectorAll('.error:not(:empty)').length === 0;
+    Swal.fire({
+        text: "¡Usuario creado con éxito!",
+        icon: "success"
+    });
+
+    // Si todos los campos son válidos, enviamos el formulario
+    /*let formularioValido = document.querySelectorAll('.error:not(:empty)').length === 0;
     if (formularioValido) {
-        alert("Formulario enviado con éxito");
+        Swal.fire({
+        text: "¡Usuario creado con éxito!",
+        icon: "success"
+    });
         this.submit();
-    }
-
+        return;
+    };*/
 });

@@ -55,92 +55,90 @@
         <main>
             <!-- Registro -->
             <section class="contentLogin signinForm">
-                <form action="" id="registerForm">
+                <form id="registerForm">
                     <div class="form">
                         <h2>CREAR USUARIO</h2>
                         <div class="inputLabel">
                             <div class="inputBox">
-                                <input type="text" required="required">
+                                <input type="text" id="nombre" placeholder=" ">
                                 <i class="fa-regular fa-user"></i>
-                                <span>Nombre/s</span>
+                                <label for="nombre">Nombre/s</label>
                             </div>
                             <div class="inputBox">
-                                <input type="text" required="required">
+                                <input type="text" id="apellido" placeholder=" ">
                                 <i class="fa-regular fa-user"></i>
-                                <span>Apellido/s</span>
+                                <label for="apellido">Apellido/s</label>
                             </div>
                         </div>
                         <div class="inputLabel">
                             <div class="inputBox">
-                                <input type="number" required="required">
+                                <input type="number" id="dni" placeholder=" ">
                                 <i class="fa-regular fa-id-card"></i>
-                                <span>DNI</span>
+                                <label for="dni">DNI</label>
                             </div>
                             <div class="inputBox">
-                                <input type="date" required="required">
+                                <input type="date" id="nacimiento" placeholder=" ">
                                 <i class="fa-regular fa-id-card"></i>
-                                <span>dd/mm/aaaa</span>
+                                <label for="nacimiento">dd/mm/aaaa</label>
                             </div>
                         </div>
                         <div class="inputLabel">
                             <div class="inputBox">
-                                <input type="text" required="required">
+                                <input type="text" id="email" placeholder=" ">
                                 <i class="fa-regular fa-envelope"></i>
-                                <span>Correo de tutor</span>
+                                <label for="email">Correo del tutor</label>
                             </div>
                             <div class="inputBox">
-                                <select name="escolaridad" required>
+                                <input type="number" id="telefono" placeholder=" ">
+                                <i class="fa-solid fa-phone"></i>
+                                <label for="telefono">Teléfono del tutor</label>
+                            </div>
+                        </div>
+                        <div class="inputLabel">
+                            <div class="inputBox">
+                                <input type="text" id="calle" placeholder=" ">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <label for="calle">Calle</label>
+                            </div>
+                            <div class="inputBox">
+                                <input type="number" id="numero" placeholder=" ">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <label for="numero">Número</label>
+                            </div>
+                        </div>
+                        <div class="inputLabel">
+                            <div class="inputBox">
+                                <input type="text" id="ciudad" placeholder=" ">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <label for="ciudad">Ciudad</label>
+                            </div>
+                            <div class="inputBox">
+                                <input type="number"  id="codigo_postal" placeholder=" ">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <label for="codigo_postal">Código Postal</label>
+                            </div>
+                        </div>
+                        <div class="inputLabel">
+                            <div class="inputBox">
+                                <select name="escolaridad" id="escolaridad">
+                                    <option value="" selected>Seleccione nivel de escolaridad</option>
                                     <option value="Nivel Inicial">Nivel Inicial</option>
                                     <option value="Nivel Primario">Nivel Primerio</option>
                                     <option value="Nivel Secundario">Nivel Secundario</option>
                                 </select>
                                 <i class="fa-solid fa-chalkboard-user"></i>
                             </div>
-                        </div>
-                        <div class="inputLabel">
-                            <div class="inputBox">
-                                <input type="text" required="required">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>Calle</span>
-                            </div>
-                            <div class="inputBox">
-                                <input type="text" required="required">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>Número</span>
-                            </div>
-                        </div>
-                        <div class="inputLabel">
-                            <div class="inputBox">
-                                <input type="text" required="required">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>Ciudad</span>
-                            </div>
-                            <div class="inputBox">
-                                <input type="text" required="required">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>Código Postal</span>
-                            </div>
-                        </div>
-                        <div class="inputLabel">
                             <div class="input">
-                                <input class="input__field" id="password" type="password" required="required">
+                                <input class="input__field" id="password" type="password" placeholder=" ">
                                 <i class="fa-solid fa-lock"></i>
                                 <label for="password" class="input__label">Contraseña</label>
                                 <div class="eye-icon-wrapper">
                                     <i class="eye-icon fa-regular fa-eye-slash"></i>
                                 </div>
                             </div>
-                            <div class="input">
-                                <input class="input__field" id="password" type="password" required="required">
-                                <i class="fa-solid fa-lock"></i>
-                                <label for="password" class="input__label">Confirmar Contraseña</label>
-                                <div class="eye-icon-wrapper">
-                                    <i class="eye-icon fa-regular fa-eye-slash"></i>
-                                </div>
-                            </div>
                         </div>
                         <div class="inputBox">
-                            <input type="submit" value="Crear Usuario" id="registerForm">
+                            <button class="btnForm" id="registerFormBtn">Crear Usuario</button>
                         </div>
                         <p>¿Ya tienes cuenta? <a href="./singin.html">INGRESÁ!</a></p>
                     </div>
@@ -156,10 +154,6 @@
                     <div class="progress-container">
                         <div id="password-progress" class="progress-bar"></div>
                     </div>
-                </div>
-                <div id="error-modal" class="error-modal">
-                    <p id="error-message"></p>
-                    <button id="close-error">Cerrar</button>
                 </div>
             </section>
         </main>
@@ -203,8 +197,10 @@
             </section>
         </footer>
     </div>
-    <script src="../static/js/navbar.js"></script>
-    <script src="../static/js/login.js"></script>
+    <!-- Zona de Scripts -->
+    <script src="../static/js/singup.js"></script>
+    <script src="../static/js/validacion.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

@@ -47,11 +47,13 @@
                 </li>
                 <li class="nav-menu-item">
                     <a href="./contact.html" class="nav-menu-link nav-link">Contacto</a>
-                </li><li class="nav-menu-item dropdown">
+                </li>
+                <li class="nav-menu-item dropdown">
                     <a class="nav-menu-link nav-link"><i class="fa-solid fa-user"></i></a>
                     <!-- menu desplegable -->
                     <ul class="dropdown-content">
-                        <li><a href="./singin.html"><i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión</a></a></li>
+                        <li><a href="./singin.html"><i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión</a></a>
+                        </li>
                         <li><a href="./singup.html"><i class="fa-solid fa-user-plus"></i> Registrarse</a></a></li>
                     </ul>
                 </li>
@@ -88,7 +90,8 @@
                     <img src="../static/img/francais.png" alt="francais">
                     <h3>Francés</h3>
                     <div class="card-content">
-                        <p>Clases de francés centradas en la práctica oral, la gramática y la comprensión de lectura.</p>
+                        <p>Clases de francés centradas en la práctica oral, la gramática y la comprensión de lectura.
+                        </p>
                         <p><span>Días y Horarios:</span> Martes y Jueves - 18:00hs a 19:30hs.</p>
                         <p><span>Beneficios:</span></p>
                         <ul>
@@ -115,22 +118,27 @@
                         <p><span>Beneficios:</span></p>
                         <ul>
                             <li>Adquisición de habilidades lingüísticas en alemán.</li>
-                            <li>Preparación para exámenes reconocidos internacionalmente como el TestDAF o el Goethe-Zertifikat.</li>
+                            <li>Preparación para exámenes reconocidos internacionalmente como el TestDAF o el
+                                Goethe-Zertifikat.</li>
                             <li>Desarrollo de la capacidad de comprensión auditiva y lectora en alemán.</li>
                             <li>Inmersión en la vida cotidiana y profesional de habla alemana.</li>
-                            <li>Fomento del pensamiento crítico y la creatividad a través del aprendizaje de un nuevo idioma.</li>
+                            <li>Fomento del pensamiento crítico y la creatividad a través del aprendizaje de un nuevo
+                                idioma.</li>
                         </ul>
                         <p><span>Cómo Unirse:</span></p>
                         <ul>
-                            <li>Inscripciones abiertas para nuevos estudiantes, desde principiantes hasta avanzados.</li>
-                            <li>No se requiere experiencia previa en alemán, pero se valorará el interés por la cultura alemana.</li>
-                            <li>Compromiso con la práctica regular y la participación activa en las actividades del curso.</li>
+                            <li>Inscripciones abiertas para nuevos estudiantes, desde principiantes hasta avanzados.
+                            </li>
+                            <li>No se requiere experiencia previa en alemán, pero se valorará el interés por la cultura
+                                alemana.</li>
+                            <li>Compromiso con la práctica regular y la participación activa en las actividades del
+                                curso.</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <!-- Botón para ir al formulario -->
-            <a href="./formulario.html" class="boton">Ir al formulario de inscripción</a>
+            <a id="btnInscripcion" class="boton">Ir al formulario de inscripción</a>
         </section>
     </main>
     <footer>
@@ -172,7 +180,17 @@
             </article>
         </section>
     </footer>
-    <script src="../static/js/main.js"></script>
+    <!-- Modal de alerta si no inició sesión antes de inscribirse a los cursos -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <i class="fa-solid fa-xmark close"></i>
+            <i class="fa-solid fa-circle-exclamation alerta"></i>
+            <p>¡Debes iniciar sesión para inscribirte!</p>
+        </div>
+    </div>
+    <!-- Zona de scripts -->
+    <script src="../static/js/extracurriculares.js"></script>
     <script src="../static/js/navbar.js"></script>
 </body>
+
 </html>

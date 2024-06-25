@@ -191,15 +191,6 @@
                         </div>
                     </div>
                 </div>
-                <!--FORMULARIO DE CONTACTO-->
-                <div class="container">
-                    <h4>Nos comunicamos con nuestra Comunidad!</h4>
-                    <!-- <input type="submit" value="Enviar"> -->
-                    <a href="../template/contact.html#form-2" class="contact-link">¡CONTACTANOS!</a>
-                    <!--FORMULARIO inscripciones-->
-                    <!-- <input type="submit" value="Enviar"> -->
-                    <a href="../template/formulario.html" class="contact-link">Solicitud de Inscripción</a>
-                </div>
             </article>
         </section>
         <!-- Descripción de Niveles Educativos -->
@@ -330,7 +321,7 @@
             <!-- Botón para ir al formulario -->
             <article>
                 <div class="boton-formulario">
-                    <a href="../template/formulario.html" class="boton">Ir al formulario de inscripción</a>
+                    <a class="boton" id="btnInscripcion">Ir al formulario de inscripción</a>
                 </div>
             </article>
         </section>
@@ -400,7 +391,17 @@
             </article>
         </section>
     </footer>
+    <!-- Modal de alerta si no inició sesión antes de inscribirse a los cursos -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <i class="fa-solid fa-xmark close"></i>
+            <i class="fa-solid fa-circle-exclamation alerta"></i>
+            <p>¡Debes iniciar sesión para inscribirte!</p>
+        </div>
+    </div>
+    <!-- Zona de Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../static/js/main.js"></script>
     <script src="../static/js/navbar.js"></script>
 </body>

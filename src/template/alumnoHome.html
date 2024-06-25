@@ -9,13 +9,13 @@
     <meta name="description" content="Pagina escolar del Instituto Luminova">
     <meta name="keywords" content="escuela, instituto, inicial, primaria, secundario">
     <meta name="author" content="Agustina Velazquez, Andreina Romero, Eleonora Roux, Vilma Ponce">
-    <title>Activiades Académicas | Instituto Luminova</title>
+    <title>Mi Cuenta | Instituto Luminova</title>
     <!-- zona de script FontAwesome -->
     <script src="https://kit.fontawesome.com/eae8fc4e25.js" crossorigin="anonymous"></script>
     <!-- zona del favicon -->
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <!-- zona de estilos -->
-    <link rel="stylesheet" href="../static/css/extracurriculares.css">
+    <link rel="stylesheet" href="../static/css/alumnoHome.css">
     <!-- zona de fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,58 +52,90 @@
                     <a class="nav-menu-link nav-link"><i class="fa-solid fa-user"></i></a>
                     <!-- menu desplegable -->
                     <ul class="dropdown-content">
-                        <li><a href="./singin.html"><i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión</a></a></li>
-                        <li><a href="./singup.html"><i class="fa-solid fa-user-plus"></i> Registrarse</a></a></li>
+                        <li><a id="cerrarSesion"><i class="fa-solid fa-user-minus"></i> Cerrar Sesión</a></a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="academic-content">
-            <h2><span>ACADÉMICO</span><i class="fa-solid fa-microscope icono-animado"></i></h2>
-            <div class="contenedor-translucido">
-                <div class="card">
-                    <img src="../static/img/robotica.png" alt="Ciencas 1">
-                    <h3>Club de ciencias</h3>
-                    <div class="card-content">
-                        <p>Puede practicarse durante todo el año, con competencias interescolares en diferentes momentos del
-                            año.</p>
-                        <p><span>Días y Horarios:</span> Lunes - 17hs a 19hs.</p>
-                        <p><span>Temas cubiertos:</span> Ciencias Naturales y sus áreas.</p>
-                        <p><span>Beneficios:</span> Promoción de la curiosidad científica, desarrollo de habilidades de
-                            resolución de problemas, preparación para competencias científicas.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../static/img/lectura.png" alt="Lectura 2">
-                    <h3>Club de Lectura</h3>
-                    <div class="card-content">
-                        <p>Puede practicarse durante todo el año, con competencias interescolares en diferentes momentos del
-                            año.</p>
-                        <p><span>Días y Horarios:</span> Martes y Jueves - 18 hs a 19:30hs.</p>
-                        <p><span>Géneros literarios explorados:</span> Cuentos, Poesía, Ensayos, etc.</p>
-                        <p><span>Beneficios:</span> Fomento de la comprensión lectora, desarrollo del pensamiento crítico,
-                            promoción de la
-                            creatividad.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../static/img/debate.png" alt="Debate 3">
-                    <h3>Club de Debate</h3>
-                    <div class="card-content">
-                        <p>Puede practicarse durante todo el año, con competencias interescolares en diferentes momentos del
-                            año.</p>
-                        <p><span>Días y Horarios:</span> Lunes , Miércoles y Viernes -16hs a 18hs.</p>
-                        <p><span>Temas cubierto:</span> Discusión de diversos temas relevantes y actuales.</p>
-                        <p><span>Beneficios:</span> Desarrollo de habilidades de argumentación y oratoria.
-                            Fomento del pensamiento crítico.</p>
-                    </div>
-                </div>
+        <!-- Barra de Navegación -->
+        <aside>
+            <div class="user-info">
+                <img src="../static/img/user.png" alt="Img usuario">
+                <h2>¡Hola <span id="name-user">Usuario</span>!</h2>
             </div>
-            <!-- Botón para ir al formulario -->
-            <a id="btnInscripcion" class="boton">Ir al formulario de inscripción</a>
-        </section>
+            <ul class="nav">
+                <li><a href="#datos" id="nav-datos" class="active"><i class="fa-solid fa-user"></i> Mis Datos</a></li>
+                <li><a href="#cursos" id="nav-cursos"><i class="fa-solid fa-list"></i> Mis Cursos</a></li>
+            </ul>
+        </aside>
+        <!-- Contenido Principal -->
+        <div class="main-container">
+            <section class="section hidden" id="datos">
+                <h3 class="section-title">Mis Datos</h3>
+                <div class="section-info">
+                    <table id="alumno-info">
+                        <th class="table-title">Datos Personales</th>
+                        <tr class="table-section">
+                            <td class="table-section-title">Nombre Completo:</td>
+                            <td class="description"><span>Jane Doe</span></td>
+                        </tr>
+                        <tr class="table-section">
+                            <td class="table-section-title">DNI:</td>
+                            <td class="description"><span>11.111.111</span></td>
+                        </tr>
+                        <tr class="table-section">
+                            <td class="table-section-title">Fecha de Nacimiento:</td>
+                            <td class="description"><span>24-06-2024</span></td>
+                        </tr>
+                        <th class="table-title">Datos de Contacto:</th>
+                        <tr class="table-section">
+                            <td class="table-section-title">Correo</td>
+                            <td class="description"><span>corre@correo.com</span></td>
+                        </tr>
+                        <tr class="table-section">
+                            <td class="table-section-title">Teléfono:</td>
+                            <td class="description"><span>11 1111 1111</span></td>
+                        </tr>
+                        <th class="table-title">Dirección:</th>
+                        <tr class="table-section">
+                            <td class="table-section-title">Calle y Número:</td>
+                            <td class="description"><span>Falsa 1234</span></td>
+                        </tr>
+                        <tr class="table-section">
+                            <td class="table-section-title">Ciudad:</td>
+                            <td class="description"><span>Morón</span></td>
+                        </tr>
+                        <tr class="table-section">
+                            <td class="table-section-title">Código Postal:</td>
+                            <td class="description"><span>1234</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <section class="section" id="cursos">
+                <h3 class="section-title">Mis Cursos</h3>
+                <div class="section-info">
+                    <div class="container-inscripciones">
+                        <table class="tabla-inscripciones">
+                            <thead>
+                                <tr>
+                                    <th>ÁREA</th>
+                                    <th>CURSO</th>
+                                    <th>ESTADO</th>
+                                    <th style="column-span: 2;"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <button class="btn-inscripcion">Darse de baja</button>
+                </div>
+            </section>
+        </div>
     </main>
     <footer>
         <section id="footer-content" class="footer-pages">
@@ -140,21 +172,11 @@
             </article>
             <!-- Derechos -->
             <article class="copy-footer">
-                <p>© 2024 Todos los derechos reservados Grupo 14-Comision 24123</p>
+                <p>© 2023 Todos los derechos reservados Grupo 14-Comision 24123</p>
             </article>
         </section>
     </footer>
-    <!-- Modal de alerta si no inició sesión antes de inscribirse a los cursos -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <i class="fa-solid fa-xmark close"></i>
-            <i class="fa-solid fa-circle-exclamation alerta"></i>
-            <p>¡Debes iniciar sesión para inscribirte!</p>
-        </div>
-    </div>
-    <!-- Zona de scripts -->
-    <script src="../static/js/extracurriculares.js"></script>
-    <script src="../static/js/navbar.js"></script>
+    <script src="../static/js/alumnoHome.js"></script>
 </body>
 
 </html>

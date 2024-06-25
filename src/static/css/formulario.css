@@ -60,15 +60,25 @@ h5 {
 }
 
 body {
+    min-height: 100vh;
     /*estos espacios hacen que no se superponga con el próximo bloque, asi queda flotando*/
     background-color: var(--color-terciario);
     font-family: "Nunito", sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
     margin-top: 9em;
+    height: auto;
+    flex: 1;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
 /************************* Navbar **************************/
 
 .header {
@@ -204,7 +214,7 @@ main {
 #formulario-container {
     border-radius: 10px;
     padding: 20px;
-    max-width: 800px;
+    max-width: 700px;
     /* Cambiado a max-width para hacerlo sensible */
     margin: 0 auto;
     margin-bottom: 2em;
@@ -217,87 +227,82 @@ h2 {
     margin-bottom: 20px;
     /* Agregado margen inferior para separar del formulario */
     color: var(--color-cuaternario);
+    font-size: 2em;
 }
 
 /* Estilos para los elementos del formulario */
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-top: 5px;
+    font-weight: 600;
 }
 
 input[type="text"],
-input[type="tel"],
 input[type="email"],
-input[type="date"],
-input[type="number"],
-select,
-textarea {
+select {
     width: 100%;
     /* Ajuste para compensar el padding */
     padding: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     border: 1px solid var(--bg-oscuro);
     border-radius: 4px;
     box-sizing: border-box;
 }
 
-input[type="radio"],
 input[type="checkbox"] {
     margin-right: 5px;
-}
-
-textarea {
-    resize: vertical;
 }
 
 /* Estilos específicos para algunos campos */
 #nombre,
 #apellido,
-#direccion,
-#telefono,
-#email,
-#fecha_nacimiento,
-#codigo_postal,
-#comentarios {
+#emails {
     padding: 8px;
-    margin-bottom: 10px;
     border: 1px solid var(--bg-oscuro);
-    border-radius: 4px;
+    border-radius: 5px;
     box-sizing: border-box;
 }
 
-/* Estilos para alinear los elementos de género horizontalmente */
-.genero-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+.actividades h3 {
+    font-weight: 700;
 }
 
-.genero-container label {
+.conocimientos-container h4 {
+    color: var(--color-nav);
+    text-transform: uppercase;
     margin-right: 10px;
 }
 
 /* Estilos para alinear los elementos de actividades horizontalmente */
-.actividades input[type="checkbox"],
-.actividades label {
+.sector {
+    display: flex;
+    justify-content: start;
+    align-items: baseline;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--color-nav);
+}
+
+.sector:last-child {
+    border-bottom: red;
+}
+
+.sector input[type="checkbox"],
+.sector label {
     display: inline-block;
     margin-right: 10px;
     /* Ajusta el espacio entre los checkboxes y sus etiquetas según sea necesario */
 }
 
 .conocimientos-container {
-    margin-top: 30px;
+    margin-top: 15px;
     margin-bottom: 20px;
-}
-
-.conocimientos-container span {
-    text-decoration: underline;
 }
 
 /* estilos boton formulario */
 .boton {
     display: block;
     margin: 0 auto;
+    margin-top: 1em;
     width: 100%;
     padding: 10px 20px;
     background-color: var(--color-primario);
@@ -311,6 +316,10 @@ textarea {
 .boton:hover {
     background-color: #0056b3;
     /* Cambia el color de fondo al pasar el mouse */
+}
+
+.hidden {
+    display: none;
 }
 
 /************************************************** Footer *************************************************/

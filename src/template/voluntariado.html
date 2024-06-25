@@ -120,7 +120,7 @@
                 </div>
             </div>
             <!-- Botón para ir al formulario -->
-            <a href="./formulario.html" class="boton">Ir al formulario de inscripción</a>
+            <a class="boton" id="btnInscripcion">Ir al formulario de inscripción</a>
         </section>
     </main>
     <footer>
@@ -162,7 +162,16 @@
             </article>
         </section>
     </footer>
-    <script src="../static/js/main.js"></script>
+    <!-- Modal de alerta si no inició sesión antes de inscribirse a los cursos -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <i class="fa-solid fa-xmark close"></i>
+            <i class="fa-solid fa-circle-exclamation alerta"></i>
+            <p>¡Debes iniciar sesión para inscribirte!</p>
+        </div>
+    </div>
+    <!-- Zona de scripts -->
+    <script src="../static/js/extracurriculares.js"></script>
     <script src="../static/js/navbar.js"></script>
 </body>
 </html>
