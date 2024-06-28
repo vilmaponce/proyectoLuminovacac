@@ -32,19 +32,19 @@
     <div class="container">
         <header class="header">
             <nav class="nav">
-                <a href="../public/index.html" class="nav-link"><img src="../static/img/navFondo.png" alt=""></a>
+                <a href="../index.html" class="nav-link"><img src="../static/img/navFondo.png" alt=""></a>
                 <button class="nav-toggle" aria-label="Abrir menú">
                     <i class="fa-solid fa-bars"></i>
                 </button>
                 <ul class="nav-menu">
                     <li class="nav-menu-item">
-                        <a href="../public/index.html" class="nav-menu-link nav-link">Inicio</a>
+                        <a href="../index.html" class="nav-menu-link nav-link">Inicio</a>
                     </li>
                     <li class="nav-menu-item">
-                        <a href="../public/index.html#institucional" class="nav-menu-link nav-link">Niveles</a>
+                        <a href="../index.html#institucional" class="nav-menu-link nav-link">Niveles</a>
                     </li>
                     <li class="nav-menu-item">
-                        <a href="../public/index.html#actividades" class="nav-menu-link nav-link">Actividades</a>
+                        <a href="../index.html#actividades" class="nav-menu-link nav-link">Actividades</a>
                     </li>
                     <li class="nav-menu-item">
                         <a href="./contact.html" class="nav-menu-link nav-link">Contacto</a>
@@ -101,7 +101,7 @@
                                 <label for="calle">Calle</label>
                             </div>
                             <div class="inputBox">
-                                <input type="number" id="numero" placeholder=" ">
+                                <input type="number" id="num" placeholder=" ">
                                 <i class="fa-solid fa-location-dot"></i>
                                 <label for="numero">Número</label>
                             </div>
@@ -113,23 +113,24 @@
                                 <label for="ciudad">Ciudad</label>
                             </div>
                             <div class="inputBox">
-                                <input type="number"  id="codigo_postal" placeholder=" ">
+                                <input type="number"  id="codigoPostal" placeholder=" ">
                                 <i class="fa-solid fa-location-dot"></i>
                                 <label for="codigo_postal">Código Postal</label>
                             </div>
                         </div>
                         <div class="inputLabel">
                             <div class="inputBox">
-                                <select name="escolaridad" id="escolaridad">
-                                    <option value="" selected>Seleccione nivel de escolaridad</option>
-                                    <option value="Nivel Inicial">Nivel Inicial</option>
-                                    <option value="Nivel Primario">Nivel Primerio</option>
-                                    <option value="Nivel Secundario">Nivel Secundario</option>
+                                <select name="escolaridad" id="genero">
+                                    <option value="" selected>Seleccione género</option>
+                                    <option value="M">Masculino</option>
+                                    <option value="F">Femenino</option>
+                                    <option value="NB">No Binario</option>
+                                    <option value="PD">Prefiero no decirlo</option>
                                 </select>
-                                <i class="fa-solid fa-chalkboard-user"></i>
+                                <i class="fa-regular fa-user"></i>
                             </div>
                             <div class="input">
-                                <input class="input__field" id="password" type="password" placeholder=" ">
+                                <input class="input__field" id="clave" type="password" placeholder=" ">
                                 <i class="fa-solid fa-lock"></i>
                                 <label for="password" class="input__label">Contraseña</label>
                                 <div class="eye-icon-wrapper">
@@ -164,7 +165,7 @@
                     <div class="footer-info">
                         <!-- Logo -->
                         <div class="logo-link">
-                            <a href="../public/index.html">
+                            <a href="../index.html">
                                 <img src="../static/img/navFondo.png" alt="Logo sin fondo">
                             </a>
                         </div>
@@ -199,7 +200,7 @@
     </div>
     <!-- Zona de Scripts -->
     <script src="../static/js/singup.js"></script>
-    <script src="../static/js/validacion.js"></script>
+     <script src="../static/js/validacion.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 

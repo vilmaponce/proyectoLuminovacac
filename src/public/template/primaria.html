@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <!-- Meta datos -->
@@ -9,41 +9,36 @@
     <meta name="description" content="Pagina escolar del Instituto Luminova">
     <meta name="keywords" content="escuela, instituto, inicial, primaria, secundario">
     <meta name="author" content="Agustina Velazquez, Andreina Romero, Eleonora Roux, Vilma Ponce">
-    <title>Huerta | Instituto Luminova</title>
+    <title>Nivel Primario | Instituto Luminova</title>
     <!-- zona de script FontAwesome -->
     <script src="https://kit.fontawesome.com/eae8fc4e25.js" crossorigin="anonymous"></script>
     <!-- zona del favicon -->
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <!-- zona de estilos -->
-    <link rel="stylesheet" href="../static/css/extracurriculares.css">
-    <!-- zona de fuentes -->
+    <link rel="stylesheet" href="../static/css/niveles-educativos.css">
+    <!-- zona de fuentes e iconos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Varela+Round&display=swap"
-        rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Slab:wght@100..900&family=Varela+Round&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
     <header class="header">
         <nav class="nav">
-            <a href="../public/index.html" class="nav-link"><img src="../static/img/navFondo.png" alt=""></a>
+            <a href="../index.html" class="nav-link"><img src="../static/img/navFondo.png" alt=""></a>
             <button class="nav-toggle" aria-label="Abrir menú">
                 <i class="fa-solid fa-bars"></i>
             </button>
             <ul class="nav-menu">
                 <li class="nav-menu-item">
-                    <a href="../public/index.html" class="nav-menu-link nav-link">Inicio</a>
+                    <a href="../index.html" class="nav-menu-link nav-link">Inicio</a>
                 </li>
                 <li class="nav-menu-item">
-                    <a href="../public/index.html#institucional" class="nav-menu-link nav-link">Niveles</a>
+                    <a href="../index.html#institucional" class="nav-menu-link nav-link">Niveles</a>
                 </li>
                 <li class="nav-menu-item">
-                    <a href="../public/index.html#actividades" class="nav-menu-link nav-link">Actividades</a>
+                    <a href="../index.html#actividades" class="nav-menu-link nav-link">Actividades</a>
                 </li>
                 <li class="nav-menu-item">
                     <a href="./contact.html" class="nav-menu-link nav-link">Contacto</a>
@@ -59,41 +54,51 @@
         </nav>
     </header>
     <main>
-        <section class="huerta-content">
-            <h2><span>HUERTA</span><i class="fa-brands fa-pagelines icono-animado"></i></h2>
-            <div class="contenedor-translucido">
-                <div class="card">
-                    <img src="../static/img/huerta.png" alt="Huerta">
-                    <h3>Huerta Comunitaria</h3>
-                    <div class="card-content">
-                        <p><span>Días y Horarios:</span> Sábados - 10:00hs a 12:00hs.</p>
-                        <p><span>Actividades:</span></p>
-                        <ul>
-                            <li>Siembra, cuidado y cosecha de frutas, verduras y hierbas en la huerta comunitaria.</li>
-                            <li>Mantenimiento del espacio, incluyendo riego, desmalezado y compostaje.</li>
-                            <li>Participación en talleres sobre agricultura sostenible, técnicas de cultivo orgánico y
-                                conservación del medio ambiente.</li>
-                            <li>Colaboración en la planificación y organización de eventos comunitarios en la huerta.
-                            </li>
-                        </ul>
-                        <p><span>Beneficios:</span></p>
-                        <ul>
-                            <li>Conexión con la naturaleza y el entorno local.</li>
-                            <li>Aprendizaje práctico sobre agricultura urbana y sostenible.</li>
-                        </ul>
-                        <p><span>Cómo Unirse:</span></p>
-                        <ul>
-                            <li>Únete a las sesiones de trabajo programadas y sigue las instrucciones del equipo de la
-                                huerta.</li>
-                            <li>Contacta al coordinador del programa de voluntariado para expresar tu interés en
-                                participar.
-                            </li>
-                            <li>Comprométete a cumplir con los horarios asignados.</li>
-                        </ul>
-                    </div>
+        <!-- Banner con imagen del nivel y pequeña descripción -->
+        <section class="levels-banner levels-banner-primary">
+            <article class="banner-information primary-banner-information">
+                <h1>Nivel Primario</h1>
+                <p>Aspiramos a una enseñanza de calidad, personalizada y activa, de equipo, que enseñe a aprender, a
+                    consultar, a adaptarse a la futura cultura y al uso de la tecnología.</p>
+            </article>
+        </section>
+        <!-- Misión -->
+        <section class="levels-content">
+            <article class="level-container">
+                <img src="../static/img/primaria2.jpg" alt="Nivel Primario">
+                <div class="initial-proposals">
+                    <h3>Lograr una enseñanza de calidad, personalizada y activa, pensada en equipo, que enseñe a
+                        aprender, a consultar, a integrarse a la cultura e interactuar en ella.</h3>
+                    <p>Ser una institución que invita, sugiere, acompaña, interpela, desequilibra, construye
+                        herramientas para desenvolverse cotidianamente.</p>
+                    <p>Fomentar un pensamiento divergente en cada uno de los alumnos.</p>
+                    <p>Acompañar en este trayecto a los niños y jóvenes de una manera respetuosa, desde la capacitación,
+                        profesionalización y actualización permanente.</p>
                 </div>
-            </div>
-            <a id="btnInscripcion" class="boton">Ir al formulario de inscripción</a>
+            </article>
+        </section>
+        <!-- Imágenes alusivas al nivel -->
+        <section class="level-carousel">
+            <img src="../static/img/primaria5.jpg" alt="Nivel Primario">
+            <img src="../static/img/primaria6.jpg" alt="Nivel Primario">
+            <img src="../static/img/primaria3.jpg" alt="Nivel Primario">
+            <img src="../static/img/primaria4.jpg" alt="Nivel Primario">
+        </section>
+        <!-- más info de la Misión -->
+        <section class="levels-content second">
+            <article class="level-container">
+                <div class="initial-proposals">
+                    <h3>Posicionarnos como adultos, desde un accionar responsable y respetuoso, en la construcción de
+                        una verdadera autoridad. Sin acciones autoritarias, desde la coherencia entre la palabra y la
+                        acción.</h3>
+                    <p>Formar jóvenes y adolescentes ciudadanos activos en el mundo, curiosos, atentos, libres, por lo
+                        que creemos fundamental introducirlos en lenguas extranjeras para manejarse en el mundo con
+                        mayor probabilidad de éxito.</p>
+                    <p>Admirar, valorar el arte como herramienta que alimenta los aspectos más elevados del ser humano.
+                    </p>
+                </div>
+                <img src="../static/img/primaria7.jpg" alt="Nivel Primario">
+            </article>
         </section>
     </main>
     <footer>
@@ -103,7 +108,7 @@
                 <div class="footer-info">
                     <!-- Logo -->
                     <div class="logo-link">
-                        <a href="../public/index.html">
+                        <a href="../index.html">
                             <img src="../static/img/navFondo.png" alt="Logo sin fondo">
                         </a>
                     </div>
@@ -131,20 +136,11 @@
             </article>
             <!-- Derechos -->
             <article class="copy-footer">
-                <p>© 2024 Todos los derechos reservados Grupo 14-Comision 24123</p>
+                <p>© 2023 Todos los derechos reservados Grupo 14-Comision 24123</p>
             </article>
         </section>
     </footer>
-    <!-- Modal de alerta si no inició sesión antes de inscribirse a los cursos -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <i class="fa-solid fa-xmark close"></i>
-            <i class="fa-solid fa-circle-exclamation alerta"></i>
-            <p>¡Debes iniciar sesión para inscribirte!</p>
-        </div>
-    </div>
-    <!-- Zona de scripts -->
-    <script src="../static/js/extracurriculares.js"></script>
+    <script src="../static/js/main.js"></script>
     <script src="../static/js/navbar.js"></script>
 </body>
 

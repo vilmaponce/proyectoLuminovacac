@@ -1,21 +1,33 @@
-// ARCHIVO QUE COMIENZA TODO EL PROCESO:
-// src/app.js
-// 1- Importación del modulo express
-const express = require("express");
-// 2- Instanciacion del objeto express
-const app = express();
-// 3- Declaración del puerto
-const PORT = 3000;
-// 4- Llamada al modulo propio
-const inscripcionRouter = require("../routes/luminovaRouter");
-// 5- Utilizasción del middlewere express.json
-/** Este middleware nos permite analizar los cuerpos 
- * de las solicitudes entrantes con formato JSON 
- * se encarga de convertir el cuerpo de la solicitud 
- * en un objeto JavaScript accesible a través de req.body.
+/**
+ * Punto principal de acceso al servidor
  */
+
+// 1 - Importamos express
+const express = require("express");
+
+// Importamos path
+const path = require("path");
+
+// 2 - Instanciamos express
+const app = express();
+
+// 3 - Importamos el modulo de las rutas
+const luminovaRouter = require("../routes/luminovaRouter");
+
+// 4 - Declaramos el puerto
+const PORT = 3000;
+
+// 5 - Transformación del body a formato legible
 app.use(express.json());
-// 6- Definición del prefijo principal del la ruta
-app.use("/luminova", inscripcionRouter);
-// 7- Inicio del servidor
-app.listen(PORT, () => {console.log(`Servidor escuchando en el puerto: ${PORT}`)});
+
+// 6 - Prefijo principal de las rutas
+app.use("/luminova", luminovaRouter);
+
+// Configuración para servir archivos estáticos 
+// app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, './public')));
+
+// 7 - Inicialización del servidor
+app.listen(PORT, () => {console.log(`Servidor escuchando en el puerto ${PORT}.`)});
+
+// 8 - Codificamos luminovaRouter.js 
