@@ -1,4 +1,4 @@
-//JS para el Navbar
+// JS para el nav
 const navToggle = document.querySelector(".nav-toggle");
 const navMenu = document.querySelector(".nav-menu");
 const loginBtn = document.querySelector(".dropdown");
@@ -24,3 +24,29 @@ document.querySelector(".nav-menu-item.dropdown").addEventListener("click", () =
     dropdown.style.opacity = 0;
   }
 });
+
+/*------------------------------------------------------------*/
+// JS para el boton de Mi Cuenta
+
+// Lógica para que aparezca sólo si el usuario inició sesión
+
+if (localStorage.getItem("dni") == null) {
+  const userLinks = document.getElementById("user-links");
+  userLinks.style.display = "none";
+} else {
+  const userLinks = document.getElementById("user-links");
+  userLinks.style.display = "block";
+  // Oculta el <li> de Ingreso o Registro
+  const ingresoLinks = document.querySelector(".nav-menu-item.dropdown");
+  ingresoLinks.style.display = "none";
+}
+
+document.getElementById("user-links").addEventListener("click", () => {
+  const dropdown = document.getElementById("menu-desplegable-user");
+  if (dropdown.style.opacity == 0) {
+    dropdown.style.opacity = 1;
+  } else {
+    dropdown.style.opacity = 0;
+  }
+});
+/*------------------------------------------------------------*/

@@ -445,6 +445,61 @@ main {
     background-color: #0056b3;
 }
 
+
+/************************* Modal Error **************************/
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); 
+}
+
+.modal-content {
+    background-color: var(--color-cuaternario);
+    border-radius: 10px;
+    margin: 15% auto;
+    padding: 5px 15px;
+    width: 30%;
+    height: 25vh;
+    position: relative;
+}
+
+.modal-content p {
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+
+.alerta {
+    position: absolute;
+    top: 20%;
+    left: 43%;
+    color: red;
+    font-size: 90px;
+}
+
+.close {
+    color: #656565;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--color-nav);
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /************************************************** Footer *************************************************/
 #footer-content {
     position: relative;

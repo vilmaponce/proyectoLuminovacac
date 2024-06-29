@@ -60,3 +60,4 @@ function limpiarFormulario() {
     document.getElementById('mensaje').value = "";
 }
 
+/*------------------------------------------------------------*/

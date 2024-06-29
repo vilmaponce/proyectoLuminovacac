@@ -66,3 +66,5 @@ function nivelEscolar() {
         hospitales.classList.remove('hidden');
     };
 };
+
+/*------------------------------------------------------------*/

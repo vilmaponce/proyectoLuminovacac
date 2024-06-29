@@ -29,3 +29,4 @@ document.getElementById('btnInscripcion').addEventListener('click', function () 
         window.location.href = './formulario.html';
     }
 });
+/*------------------------------------------------------------*/

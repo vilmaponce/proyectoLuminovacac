@@ -48,11 +48,13 @@
                 <li class="nav-menu-item">
                     <a href="./contact.html" class="nav-menu-link nav-link">Contacto</a>
                 </li>
-                <li class="nav-menu-item dropdown">
-                    <a class="nav-menu-link nav-link"><i class="fa-solid fa-user"></i></a>
+                <li class="nav-menu-item user dropdown">
+                    <a class="nav-menu-link nav-link"><i class="fa-solid fa-user"></i> Mi Cuenta</a>
                     <!-- menu desplegable -->
-                    <ul class="dropdown-content">
-                        <li><a id="cerrarSesion"><i class="fa-solid fa-user-minus"></i> Cerrar Sesión</a></a></li>
+                    <ul class="dropdown-content" id="menu-desplegable-user">
+                        <li><a href="#"><i class="fa-solid fa-right-to-bracket"></i> Mi Perfil</a></li>
+                        <li><a id=""><i class="fa-solid fa-user-pen"></i> Modificar Perfil</a></li>
+                        <li><a id="cerrar-sesion"><i class="fa-solid fa-user-plus"></i> Cerrar Sesión</a></li>
                     </ul>
                 </li>
             </ul>
@@ -63,7 +65,7 @@
         <aside>
             <div class="user-info">
                 <img src="../static/img/user.png" alt="Img usuario">
-                <h2>¡Hola <span id="name-user">Usuario</span>!</h2>
+                <h2>¡Hola <span id="name-user"></span>!</h2>
             </div>
             <ul class="nav">
                 <li><a href="#datos" id="nav-datos" class="active"><i class="fa-solid fa-user"></i> Mis Datos</a></li>
@@ -79,37 +81,37 @@
                         <th class="table-title">Datos Personales</th>
                         <tr class="table-section">
                             <td class="table-section-title">Nombre Completo:</td>
-                            <td class="description"><span>Jane Doe</span></td>
+                            <td class="description"><span id="user-nombre-completo"></span></td>
                         </tr>
                         <tr class="table-section">
                             <td class="table-section-title">DNI:</td>
-                            <td class="description"><span>11.111.111</span></td>
+                            <td class="description"><span id="user-dni"></span></td>
                         </tr>
                         <tr class="table-section">
                             <td class="table-section-title">Fecha de Nacimiento:</td>
-                            <td class="description"><span>24-06-2024</span></td>
+                            <td class="description"><span id="user-nacimiento"></span></td>
                         </tr>
                         <th class="table-title">Datos de Contacto:</th>
                         <tr class="table-section">
-                            <td class="table-section-title">Correo</td>
-                            <td class="description"><span>corre@correo.com</span></td>
+                            <td class="table-section-title">Correodel Tutor</td>
+                            <td class="description"><span id="user-email"></span></td>
                         </tr>
                         <tr class="table-section">
-                            <td class="table-section-title">Teléfono:</td>
-                            <td class="description"><span>11 1111 1111</span></td>
+                            <td class="table-section-title">Teléfono del Tutor:</td>
+                            <td class="description"><span id="user-tel"></span></td>
                         </tr>
                         <th class="table-title">Dirección:</th>
                         <tr class="table-section">
                             <td class="table-section-title">Calle y Número:</td>
-                            <td class="description"><span>Falsa 1234</span></td>
+                            <td class="description"><span id="user-address"></span></td>
                         </tr>
                         <tr class="table-section">
                             <td class="table-section-title">Ciudad:</td>
-                            <td class="description"><span>Morón</span></td>
+                            <td class="description"><span id="user-city"></span></td>
                         </tr>
                         <tr class="table-section">
                             <td class="table-section-title">Código Postal:</td>
-                            <td class="description"><span>1234</span></td>
+                            <td class="description"><span id="user-cp"></span></td>
                         </tr>
                     </table>
                 </div>
@@ -117,7 +119,7 @@
             <section class="section hidden" id="cursos">
                 <h3 class="section-title">Mis Cursos</h3>
                 <div class="section-info">
-                    <div class="container-inscripciones">
+                    <!-- <div class="container-inscripciones">
                         <table class="tabla-inscripciones">
                             <thead>
                                 <tr>
@@ -128,11 +130,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-
+                                <div id="inscripciones-list"></div>
                             </tbody>
                         </table>
-                    </div>
-                    <button class="btn-inscripcion">Darse de baja</button>
+                        <button class="btn-inscripcion">Darse de baja</button>
+                    </div> -->
+                    <div id="inscripciones-list"></div>
                 </div>
             </section>
         </div>
@@ -177,6 +180,7 @@
         </section>
     </footer>
     <script src="../static/js/alumnoHome.js"></script>
+    <script src="../static/js/navbar.js"></script>
 </body>
 
 </html>

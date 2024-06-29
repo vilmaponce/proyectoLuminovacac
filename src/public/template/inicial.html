@@ -42,12 +42,21 @@
                 </li>
                 <li class="nav-menu-item">
                     <a href="./contact.html" class="nav-menu-link nav-link">Contacto</a>
-                </li><li class="nav-menu-item dropdown">
+                </li>
+                <li class="nav-menu-item dropdown">
                     <a class="nav-menu-link nav-link"><i class="fa-solid fa-user"></i></a>
                     <!-- menu desplegable -->
                     <ul class="dropdown-content">
                         <li><a href="./singin.html"><i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión</a></a></li>
                         <li><a href="./singup.html"><i class="fa-solid fa-user-plus"></i> Registrarse</a></a></li>
+                    </ul>
+                </li>
+                <li class="nav-menu-item user dropdown" id="user-links">
+                    <a class="nav-menu-link nav-link"><i class="fa-solid fa-user"></i> Mi Cuenta</a>
+                    <!-- menu desplegable -->
+                    <ul class="dropdown-content" id="menu-desplegable-user">
+                        <li><a href="./alumnoHome.html"><i class="fa-solid fa-right-to-bracket"></i> Mi Perfil</a></li>
+                        <li><a id="cerrar-sesion"><i class="fa-solid fa-user-plus"></i> Cerrar Sesión</a></li>
                     </ul>
                 </li>
             </ul>
@@ -149,7 +158,6 @@
         </section>
     </footer>
     <script src="../static/js/main.js"></script>
-    <script src="../static/js/navbar.js"></script>
 </body>
 
 </html>
