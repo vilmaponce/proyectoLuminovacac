@@ -1,50 +1,51 @@
 //JS para el menu aside
-
-document.addEventListener('DOMContentLoaded', () => {
-  const datosLink = document.getElementById('nav-datos');
-  const cursosLink = document.getElementById('nav-cursos');
-  const datosContent = document.getElementById('datos');
-  const cursosContent = document.getElementById('cursos');
-
-  datosLink.addEventListener('click', (event) => {
-    event.preventDefault();
-    setActiveLink(datosLink);
-    showContent(datosContent, cursosContent, 'right');
+// Agrega un event listener al enlace "Mis Datos"
+document.querySelector('li a[href="#datos"]').addEventListener('click', () => {
+  // Oculta todos los sections del main-container
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(section => {
+    section.classList.add('hidden');
+    document.querySelector('li a[href="#cursos"]').classList.remove('active');
   });
 
-  cursosLink.addEventListener('click', (event) => {
-    event.preventDefault();
-    setActiveLink(cursosLink);
-    showContent(cursosContent, datosContent, 'right');
-  });
-
-  function setActiveLink(activeLink) {
-    datosLink.classList.remove('active');
-    cursosLink.classList.remove('active');
-    activeLink.classList.add('active');
-  }
-
-  function showContent(show, hide, direction) {
-    hide.style.transform = `translateX(${direction === 'left' ? '-' : ''}100%)`;
-    show.style.display = 'block';
-    requestAnimationFrame(() => {
-      show.style.transform = 'translateX(0)';
-      hide.addEventListener('transitionend', () => {
-        hide.style.display = 'none';
-      }, { once: true });
-    });
-  }
+  // Muestra solo el section #datos
+  const datosSection = document.getElementById('datos');
+  datosSection.classList.remove('hidden');
+  document.querySelector('li a[href="#datos"]').classList.add('active');
 });
+
 /*------------------------------------------------------------*/
+// Agrega un event listener al enlace "Mis Cursos"
+document.querySelector('li a[href="#cursos"]').addEventListener('click', () => {
+  // Oculta todos los sections del main-container
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(section => {
+    section.classList.add('hidden');
+    document.querySelector('li a[href="#datos"]').classList.remove('active');
+  });
 
-//JS para cargar las inscripciones en la tabla
-const inscripcion = {
-  area: '',
-  curso: '',
-  estado: ''
-};
+  // Muestra solo el section #datos
+  const cursosSection = document.getElementById('cursos');
+  cursosSection.classList.remove('hidden');
+  document.querySelector('li a[href="#cursos"]').classList.add('active');
+});
 
-let enCurso = false;
+/*------------------------------------------------------------*/
+// Agrega un event listener al enlace "Modificar Perfil"
+document.querySelector('li a[href="#update"]').addEventListener('click', () => {
+  // Oculta todos los sections del main-container
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(section => {
+    section.classList.add('hidden');
+    document.querySelector('li a[href="#datos"]').classList.remove('active');
+    document.querySelector('li a[href="#cursos"]').classList.remove('active');
+  });
+
+  // Muestra solo el section #update
+  const updateSection = document.getElementById('update');
+  updateSection.classList.remove('hidden');
+});
+
 /*------------------------------------------------------------*/
 // JS que inserta los datos del alumno en "Mis Datos"
 const ninckname = document.getElementById("name-user");
@@ -77,6 +78,7 @@ telefono.innerText = localStorage.getItem("telefono");
 address.innerText = localStorage.getItem("calle") + " " + localStorage.getItem("num");
 ciudad.innerText = localStorage.getItem("ciudad");
 codigoPostal.innerText = localStorage.getItem("codigoPostal");
+
 /*------------------------------------------------------------*/
 // JS que inserta los cursos del alumno en "Mis Cursos"
 async function getAllInscripciones() {
@@ -84,41 +86,263 @@ async function getAllInscripciones() {
   const studentDni = localStorage.getItem("dni");
 
   try {
-      const response = await fetch(`/luminova/list?dni=${studentDni}`);
-      const inscripciones = await response.json();
+    const response = await fetch(`/luminova/list?dni=${studentDni}`);
+    const inscripciones = await response.json();
 
-      const inscripcionesList = document.getElementById('inscripciones-list');
-      inscripcionesList.innerHTML = '';
+    const inscripcionesList = document.getElementById('inscripciones-list');
+    const sinInscripcion = document.getElementById('sin-inscripcion-aviso');
+    const tablaInscripciones = document.getElementById('tabla-de-inscripciones');
 
-      if (inscripciones.length == 0) {
-          const li = document.createElement('li');
-          li.textContent = '> No posee inscripciones aún. <';
-          inscripcionesList.appendChild(li);
-      } else {
-          inscripciones.forEach(inscripcion => {
-              const li = document.createElement('li');
-              let estado = inscripcion.estado;
-              if (estado == 1) {
-                  estado = "Inscripto"
-                  li.textContent = '> ID de Inscripción: ' + inscripcion.id + ' | Curso: ' + inscripcion.curso_nombre + ' | Estado: ' + estado;
-                  inscripcionesList.appendChild(li);
-              } else {
-                  estado = "Dado de baja"
-                  li.textContent = '> ID de Inscripción: ' + inscripcion.id + ' | Curso: ' + inscripcion.curso_nombre + ' | Estado: ' + estado;
-                  inscripcionesList.appendChild(li);
-              }
-          });
-      };
+    inscripcionesList.innerHTML = '';
+
+    if (inscripciones.length == 0) {
+      sinInscripcion.style.display = "block";
+    } else {
+      inscripciones.sort((a, b) => a.id - b.id); // Ordenar por id de forma ascendente
+      inscripciones.forEach(inscripcion => {
+        const tr = document.createElement('tr');
+        let estado = inscripcion.estado;
+
+        if (estado == 1) {
+          estado = "En Curso"
+          tr.innerHTML = `
+            <th>${inscripcion.curso_nombre}</th>
+            <th>${estado}</th>
+            <th><button class="btn-inscripcion" onclick=darBaja(${inscripcion.id})>Darse de baja</button></th>
+          `;
+          inscripcionesList.appendChild(tr);
+        };
+
+        if (estado == 0) {
+          estado = "Dado de Baja"
+          tr.innerHTML = `
+            <th>${inscripcion.curso_nombre}</th>
+            <th>${estado}</th>
+            <th></th>
+          `;
+          inscripcionesList.appendChild(tr);
+        }
+        tablaInscripciones.style.opacity = 1;
+      });
+    };
+
+
   } catch (error) {
-      console.error('Error al obtener las inscripciones:' + error);
-      alert("Error al obtener las inscripciones.");
+    console.error('Error al obtener las inscripciones:' + error);
+    const modal = document.getElementById("errorModal");
+    const mensaje = document.getElementById("error-message");
+    mensaje.innerText = "Error al obtener las inscripciones."
+    modal.style.display = 'block';
+
+    //usuario cierra el modal
+    const close = document.getElementsByClassName('close')[0];
+    close.onclick = function () {
+      modal.style.display = 'none';
+    }
+
+    // Cerrar el modal haciendo clic fuera del mismo
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+      return
+    }
   };
-}
+};
 
 // Llamar a la función para obtener todas las inscripciones al cargar la página
 document.addEventListener('DOMContentLoaded', getAllInscripciones);
 /*------------------------------------------------------------*/
+// JS para DAR DE BAJA la inscripcion de un alumno
+async function darBaja(id) {
 
+  let dni = localStorage.getItem("dni");
+
+  const baja = { dni, id };
+
+  try {
+    const response = await fetch(`/luminova/${dni}/inscripciones`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(baja)
+    });
+
+    if (response.ok) {
+      const modal = document.getElementById("succesModal");
+      const mensaje = document.getElementById("succes-message");
+      mensaje.innerText = "¡El alumno se ha dado de baja con éxito!"
+      modal.style.display = 'block';
+
+      // usuario cierra el modal
+      const close = document.getElementById('close-succes');
+      close.onclick = function () {
+        modal.style.display = 'none';
+        // Recarga la página
+        location.reload();
+      };
+
+      // Cerrar el modal haciendo clic fuera del mismo
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+          // Recarga la página
+          location.reload();
+        }
+        return
+      };
+
+      return
+    } else {
+      const modal = document.getElementById("errorModal");
+      const mensaje = document.getElementById("error-message");
+      mensaje.innerText = "Error al generar la baja."
+      modal.style.display = 'block';
+
+      //usuario cierra el modal
+      const close = document.getElementById('close-error');
+      close.onclick = function () {
+        modal.style.display = 'none';
+      };
+
+      // Cerrar el modal haciendo clic fuera del mismo
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        };
+        return
+      };
+      return
+    };
+  } catch (error) {
+    console.error('Error al generar la baja:', error);
+    const modal = document.getElementById("errorModal");
+    const mensaje = document.getElementById("error-message");
+    mensaje.innerText = "Error al generar la baja."
+    modal.style.display = 'block';
+
+    //usuario cierra el modal
+    const close = document.querySelector('.close');
+    close.onclick = function () {
+      modal.style.display = 'none';
+    };
+
+    // Cerrar el modal haciendo clic fuera del mismo
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      };
+      return
+    };
+    return
+  }
+};
+/*------------------------------------------------------------*/
+// JS para modificar los datos del alumno
+// Insertamos primero los datos
+document.getElementById("user-name-update").value = localStorage.getItem("nombre") + ' ' + localStorage.getItem("apellido");
+document.getElementById("user-dni-update").value = localStorage.getItem("dni");
+document.getElementById("user-nac-update").value = formatFecha(nacFormateado);
+document.getElementById("user-email-update").value = localStorage.getItem("email");
+document.getElementById("user-tel-update").value = localStorage.getItem("telefono");
+document.getElementById("user-calle-update").value = localStorage.getItem("calle");
+document.getElementById("user-num-update").value = localStorage.getItem("num");
+document.getElementById("user-ciudad-update").value = localStorage.getItem("ciudad");
+document.getElementById("user-cp-update").value = localStorage.getItem("codigoPostal");
+
+document.getElementById('alumno-update-form').addEventListener('submit', async function (event) {
+  event.preventDefault();
+
+  // Al haber insertado valores previamente en los input, si el usuario no cambia algun dato, quedará que el valor existente
+  let dni = document.getElementById('user-dni-update').value;
+  let email = document.getElementById('user-email-update').value;
+  let telefono = document.getElementById('user-tel-update').value;
+  let calle = document.getElementById('user-calle-update').value;
+  let num = document.getElementById('user-num-update').value;
+  let ciudad = document.getElementById('user-ciudad-update').value;
+  let codigoPostal = document.getElementById('user-cp-update').value;
+
+  const alumnoEditado = { email, telefono, calle, num, ciudad, codigoPostal, dni };
+
+  try {
+    const response = await fetch(`/luminova/${dni}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(alumnoEditado)
+    });
+
+    if (response.ok) {
+      const modal = document.getElementById("succesModal");
+      const mensaje = document.getElementById("succes-message");
+      mensaje.innerText = "¡Alumno modificado con éxito!"
+      modal.style.display = 'block';
+
+      // usuario cierra el modal
+      const close = document.getElementById('close-succes');
+      close.onclick = function () {
+        modal.style.display = 'none';
+        // Recarga la página
+        location.reload();
+      };
+
+      // Cerrar el modal haciendo clic fuera del mismo
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+          // Recarga la página
+          location.reload();
+        }
+        return
+      };
+      return
+    } else {
+      const modal = document.getElementById("errorModal");
+      const mensaje = document.getElementById("error-message");
+      mensaje.innerText = "Error al modificar al alumno."
+      modal.style.display = 'block';
+
+      //usuario cierra el modal
+      const close = document.querySelector('.close');
+      close.onclick = function () {
+        modal.style.display = 'none';
+      };
+
+      // Cerrar el modal haciendo clic fuera del mismo
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        };
+        return
+      };
+      return
+    }
+  } catch (error) {
+    console.error('Error al modificar al alumno:', error);
+    const modal = document.getElementById("errorModal");
+    const mensaje = document.getElementById("error-message");
+    mensaje.innerText = "Error al modificar al alumno."
+    modal.style.display = 'block';
+
+    //usuario cierra el modal
+    const close = document.querySelector('.close');
+    close.onclick = function () {
+      modal.style.display = 'none';
+    };
+
+    // Cerrar el modal haciendo clic fuera del mismo
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      };
+      return
+    };
+    return
+  }
+});
+/*------------------------------------------------------------*/
 // JS para Cerrar Sesion - limpia localStorage
 document.getElementById('cerrar-sesion').addEventListener('click', () => {
   // Limpiar el localStorage

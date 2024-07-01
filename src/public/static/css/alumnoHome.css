@@ -246,7 +246,7 @@ aside .user-info h2 {
     margin-top: 15px;
 }
 
-aside ul.nav  {
+aside ul.nav {
     list-style: none;
     padding: 0;
     display: flex;
@@ -269,7 +269,7 @@ aside .nav a {
 }
 
 aside .nav a.active {
-    color: var(--color-primario);
+    color: var(--color-secundario);
 }
 
 .section {
@@ -279,7 +279,7 @@ aside .nav a.active {
     width: 100%;
     height: 100%;
     padding: 30px;
-    transition: transform 0.5s ease-in-out;
+    overflow-y: scroll;
 }
 
 .hidden {
@@ -332,20 +332,32 @@ table {
     right: 30px;
     cursor: pointer;
 }
-
-/* TABLA DE INSCRIPCIONES */
-.container-inscripciones {
+/************************* TABLA DE INSCRIPCIONES **************************/
+/* Estilos para la tabla */
+.tabla-inscripciones {
+    opacity: 0;
+    /* Ancho y alto de la tabla */
     width: 75%;
-    height: fit-content;
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 5px;
-    text-align: center;
-    border: 2px var(--color-nav) ridge;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.tabla-inscripciones thead {
-    height: 1.5rem;
+.tabla-inscripciones thead tr th {
+    padding: 15px;
+    /* Fondo y texto */
+    background-color: var(--color-nav);
+    outline: none;
+    color: var(--color-cuaternario);
+    font-weight: bold;
+}
+
+/* Estilos para las celdas */
+.tabla-inscripciones tbody th {
+    height: 50px;
+    padding: 5px;
+    border: 1px solid var(--color-nav);
+    border-radius: 15px;
+    text-align: center;
 }
 
 .btn-inscripcion {
@@ -362,6 +374,117 @@ table {
 .btn-inscripcion:hover {
     background-color: var(--color-nav);
 }
+
+#sin-inscripcion-aviso {
+    display: none;
+}
+
+/************************* TABLA DE CAMBIO DE DATOS **************************/
+.alumno-info-update {
+    width: 80%;
+    padding: 25px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+.alumno-info-update .inputLabel {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 10px;
+    gap: 15px;
+}
+.alumno-info-update .alumno-info-disabled .inputLabel {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 10px;
+}
+
+.alumno-info-update .alumno-info-disabled .inputLabel .inputBox {
+    width: 33%;
+}
+
+.alumno-info-update .inputLabel .inputBox input {
+    height: 30px;
+    border: 2px solid var(--color-nav);
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.alumno-info-update .alumno-info-disabled .inputLabel:first-child .inputBox input {
+    border: none;
+    border-bottom: 1px solid var(--color-nav);
+    border-radius: 0;
+}
+
+.alumno-info-update input {
+    padding: 5px;
+    font-family: "Nunito", sans-serif;
+    font-size: medium;
+}
+/************************* Modal Error **************************/
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); 
+}
+
+.modal-content {
+    background-color: var(--color-cuaternario);
+    border-radius: 10px;
+    margin: 15% auto;
+    padding: 5px 15px;
+    width: 30%;
+    height: 25vh;
+    position: relative;
+}
+
+.modal-content p {
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+
+.error {
+    position: absolute;
+    top: 20%;
+    left: 43%;
+    color: red;
+    font-size: 90px;
+}
+
+.succes {
+    position: absolute;
+    top: 20%;
+    left: 43%;
+    color: green;
+    font-size: 90px;
+}
+
+.close {
+    color: #656565;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--color-nav);
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /************************************************** Footer *************************************************/
 #footer-content {
     position: relative;

@@ -82,11 +82,11 @@ const createStudent = (req, res) => {
 // D - .updateStudent - FUNCIONA FE y BE
 const updateStudent = (req, res) => {
     // Obtenemos el id que nos solicita el request
-    const { email, telefono, calle, num, ciudad, codigoPostal, clave, studentDni } = req.body;
+    const { email, telefono, calle, num, ciudad, codigoPostal, dni } = req.body;
     // Creamos la consulta para traer la pelicula con ese id
-    const sql = 'UPDATE alumno SET email = ?, telefono = ?, calle = ?, num = ?, ciudad = ?, codigoPostal = ?, clave = ? WHERE dni = ?';
+    const sql = 'UPDATE alumno SET email = ?, telefono = ?, calle = ?, num = ?, ciudad = ?, codigoPostal = ? WHERE dni = ?';
     // Enviamos la consulta a la base de datos
-    db.query(sql, [email, telefono, calle, num, ciudad, codigoPostal, clave, studentDni], (err, result) => {
+    db.query(sql, [email, telefono, calle, num, ciudad, codigoPostal, dni], (err, result) => {
         // Si sucede un error
         if (err) throw err;
         // Si todo sale bien

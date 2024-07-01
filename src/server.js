@@ -28,6 +28,6 @@ app.use("/luminova", luminovaRouter);
 app.use(express.static(path.join(__dirname, './public')));
 
 // 7 - Inicialización del servidor
-app.listen(PORT, () => {console.log(`Servidor escuchando en el puerto ${PORT}.`)});
+app.listen(PORT, () => {console.log(`Servidor corriendo en http://localhost:${PORT}/index.html`)});
 
 // 8 - Codificamos luminovaRouter.js 
