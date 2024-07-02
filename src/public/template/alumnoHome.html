@@ -68,12 +68,12 @@
             </div>
             <ul class="nav">
                 <li><a href="#datos" id="nav-datos" class="active"><i class="fa-solid fa-user"></i> Mis Datos</a></li>
-                <li><a href="#cursos" id="nav-cursos"><i class="fa-solid fa-list"></i> Mis Cursos</a></li>
+                <li><a href="#cursos" id="nav-cursos"><i class="fa-solid fa-list"></i> Mis Inscripciones</a></li>
             </ul>
         </aside>
         <!-- Contenido Principal -->
         <div class="main-container">
-            <section class="section hidden" id="datos">
+            <section class="section" id="datos">
                 <h3 class="section-title">Mis Datos</h3>
                 <div class="section-info">
                     <table id="alumno-info">
@@ -116,13 +116,13 @@
                 </div>
             </section>
             <section class="section hidden" id="cursos">
-                <h3 class="section-title">Mis Cursos</h3>
+                <h3 class="section-title">Mis Inscripciones</h3>
                 <div class="section-info">
                     <span id="sin-inscripcion-aviso">No se encontraron inscipciones.</span>
                     <table class="tabla-inscripciones" id="tabla-de-inscripciones">
                         <thead>
                             <tr>
-                                <th>CURSO</th>
+                                <th>ACTIVIDAD</th>
                                 <th>ESTADO</th>
                                 <th>ACCIONES</th>
                             </tr>
@@ -131,59 +131,60 @@
                     </table>
                 </div>
             </section>
-            <section class="section" id="update">
+            <section class="section hidden" id="update">
                 <h3 class="section-title">Modificar Datos</h3>
                 <div class="section-info">
                     <form id="alumno-update-form" class="alumno-info-update">
                         <div class="alumno-info-disabled">
                             <div class="inputLabel">
                                 <div class="inputBox">
-                                    <label for="user-name-update">Nombre Completo</label>
+                                    <label for="user-name-update">Nombre Completo*: </label>
                                     <input type="text" id="user-name-update" disabled>
                                 </div>
                                 <div class="inputBox">
-                                    <label for="user-dni-update">DNI:</label>
+                                    <label for="user-dni-update">DNI*: </label>
                                     <input type="number" id="user-dni-update" disabled>
                                 </div>
                                 <div class="inputBox">
-                                    <label for="ser-nac-update">Fecha de Nacimiento:</label>
+                                    <label for="ser-nac-update">Fecha de Nacimiento*:</label>
                                     <input type="text" id="user-nac-update" disabled>
                                 </div>
                             </div>
+                            <span>* Estos datos no se pueden modificar.</span>
                         </div>
-                        <div class="inputLabel">
-                            <div class="inputBox">
-                                <label for="user-email-update">Correo del Tutor:</label>
-                                <input type="email" name="user-email-update" id="user-email-update">
+                        <div class="alumno-info-input">
+                            <h4>Datos de Contacto</h4>
+                            <div class="inputLabel">
+                                <div class="inputBox">
+                                    <label for="user-email-update">Correo del Tutor:</label>
+                                    <input type="email" name="user-email-update" id="user-email-update">
+                                </div>
+                                <div class="inputBox">
+                                    <label for="user-tel-update">Teléfono del Tutor:</label>
+                                    <input type="tel" name="user-tel-update" id="user-tel-update">
+                                </div>
                             </div>
-                            <div class="inputBox">
-                                <label for="user-tel-update">Teléfono del Tutor:</label>
-                                <input type="tel" name="user-tel-update" id="user-tel-update">
+                            <h4>Dirección</h4>
+                            <div class="inputLabel">
+                                <div class="inputBox">
+                                    <label for="user-calle-update">Calle:</label>
+                                    <input type="text" name="user-calle-update" id="user-calle-update">
+                                </div>
+                                <div class="inputBox">
+                                    <label for="user-num-update">Altura:</label>
+                                    <input type="number" name="user-num-update" id="user-num-update">
+                                </div>
                             </div>
-                        </div>
-                        <div class="inputLabel">
-                            <div class="inputBox">
-                                <label for="user-calle-update">Calle:</label>
-                                <input type="text" name="user-calle-update" id="user-calle-update">
+                            <div class="inputLabel">
+                                <div class="inputBox">
+                                    <label for="user-ciudad-update">Ciudad:</label>
+                                    <input type="text" name="user-ciudad-update" id="user-ciudad-update">
+                                </div>
+                                <div class="inputBox">
+                                    <label for="user-cp-update">Código Postal:</label>
+                                    <input type="number" name="user-cp-update" id="user-cp-update">
+                                </div> 
                             </div>
-                        </div>
-                        <div class="inputLabel">
-                            <div class="inputBox">
-                                <label for="user-num-update">Altura:</label>
-                                <input type="number" name="user-num-update" id="user-num-update">
-                            </div>
-                        </div>
-                        <div class="inputLabel">
-                            <div class="inputBox">
-                                <label for="user-ciudad-update">Ciudad:</label>
-                                <input type="text" name="user-ciudad-update" id="user-ciudad-update">
-                            </div>
-                        </div>
-                        <div class="inputLabel">
-                            <div class="inputBox">
-                                <label for="user-cp-update">Código Postal:</label>
-                                <input type="number" name="user-cp-update" id="user-cp-update">
-                            </div>                                
                         </div>
                         <button class="btn-inscripcion" type="submit">Modificar Perfil</button>
                     </form>
@@ -247,7 +248,6 @@
         </section>
     </footer>
     <script src="../static/js/alumnoHome.js"></script>
-    <script src="../static/js/navbar.js"></script>
 </body>
 
 </html>

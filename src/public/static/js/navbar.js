@@ -27,9 +27,7 @@ document.querySelector(".nav-menu-item.dropdown").addEventListener("click", () =
 
 /*------------------------------------------------------------*/
 // JS para el boton de Mi Cuenta
-
 // Lógica para que aparezca sólo si el usuario inició sesión
-
 if (localStorage.getItem("dni") == null) {
   const userLinks = document.getElementById("user-links");
   userLinks.style.display = "none";
@@ -39,7 +37,7 @@ if (localStorage.getItem("dni") == null) {
   // Oculta el <li> de Ingreso o Registro
   const ingresoLinks = document.querySelector(".nav-menu-item.dropdown");
   ingresoLinks.style.display = "none";
-}
+};
 
 document.getElementById("user-links").addEventListener("click", () => {
   const dropdown = document.getElementById("menu-desplegable-user");
@@ -47,6 +45,25 @@ document.getElementById("user-links").addEventListener("click", () => {
     dropdown.style.opacity = 1;
   } else {
     dropdown.style.opacity = 0;
-  }
+  };
 });
 /*------------------------------------------------------------*/
+// JS para Cerrar Sesion - limpia localStorage
+document.getElementById('cerrar-sesion').addEventListener('click', () => {
+  // Limpiar el localStorage
+  localStorage.removeItem("nombre");
+  localStorage.removeItem("apellido");
+  localStorage.removeItem("dni");
+  localStorage.removeItem("nacimiento");
+  localStorage.removeItem("genero");
+  localStorage.removeItem("email");
+  localStorage.removeItem("telefono");
+  localStorage.removeItem("calle");
+  localStorage.removeItem("num");
+  localStorage.removeItem("ciudad");
+  localStorage.removeItem("codigoPostal");
+  localStorage.removeItem("clave");
+  localStorage.clear();
+  
+  window.location.href = "../index.html"
+});

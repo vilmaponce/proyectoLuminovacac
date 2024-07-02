@@ -47,6 +47,9 @@
                         <a href="../index.html#actividades" class="nav-menu-link nav-link">Actividades</a>
                     </li>
                     <li class="nav-menu-item">
+                        <a href="./alumnoHome.html" class="nav-menu-link nav-link">Mis Inscripciones</a>
+                    </li>
+                    <li class="nav-menu-item">
                         <a href="./contact.html" class="nav-menu-link nav-link">Contacto</a>
                     </li>
                     <li class="nav-menu-item dropdown">
@@ -74,10 +77,10 @@
             <section id="formulario-container">
                 <form id="registroForm">
                     <label for="nombre">Nombre completo del Alumno:</label>
-                    <input type="text" id="nombreCompleto" name="nombre" placeholder="Juan Carlos Perez">
+                    <input type="text" id="nombreCompleto" name="nombre" disabled>
     
                     <label for="email">Correo de Contacto:</label>
-                    <input type="email" id="email" name="email" placeholder="correo@correo.com">
+                    <input type="email" id="email" name="email" disabled>
     
                     <label for="estudios">Nivel Escolar:</label>
                     <select id="estudios" name="estudios" onchange="nivelEscolar()">
@@ -95,19 +98,19 @@
                         <div id="deportes" class="sector">
                             <h4>Sector Deportivo:</h4>
                             <div id="natacionDiv">
-                                <input type="checkbox" id="natacion" name="natacion" value="Natación">
+                                <input type="checkbox" id="natacion" name="natacion" value="4">
                                 <label for="natacion">Natación</label>
                             </div>
                             <div id="basketDiv">
-                                <input type="checkbox" id="basket" name="basket" value="Basket">
+                                <input type="checkbox" id="basket" name="basket" value="15">
                                 <label for="basket">Basket</label>
                             </div>
                             <div id="futbolDiv">
-                                <input type="checkbox" id="futbol" name="futbol" value="Futbol">
+                                <input type="checkbox" id="futbol" name="futbol" value="16">
                                 <label for="futbol">Fútbol</label>
                             </div>
                             <div id="atletismoDiv">
-                                <input type="checkbox" id="atletismo" name="atletismo" value="Atletismo">
+                                <input type="checkbox" id="atletismo" name="atletismo" value="17">
                                 <label for="atletismo">Atletismo</label>
                             </div>
                         </div>
@@ -115,31 +118,31 @@
                         <div id="arte" class="sector">
                             <h4>Sector Artístico:</h4>
                             <div id="teatroDiv">
-                                <input type="checkbox" id="teatro" name="teatro" value="Teatro">
-                                <label for="teatro">Teatro</label>
+                                <input type="checkbox" id="teatro" name="teatro" value="18">
+                                <label for="teatro">Club de Teatro</label>
                             </div>
                             <div id="musicaDiv">
-                                <input type="checkbox" id="musica" name="musica" value="Música">
-                                <label for="musica">Música</label>
+                                <input type="checkbox" id="musica" name="musica" value="19">
+                                <label for="musica">Club de Música</label>
                             </div>
                             <div id="pintura_dibujoDiv">
-                                <input type="checkbox" id="pintura_dibujo" name="pintura_dibujo" value="Pintura y dibujo">
-                                <label for="pintura_dibujo">Pintura y Dibujo</label>
+                                <input type="checkbox" id="pintura_dibujo" name="pintura_dibujo" value="20">
+                                <label for="pintura_dibujo">Club de Artes Plásticas</label>
                             </div>
                         </div>
     
                         <div id="academico" class="sector">
                             <h4>Sector Académico:</h4>
                             <div id="cienciasDiv">
-                                <input type="checkbox" id="ciencias" name="ciencias" value="Club de ciencias">
+                                <input type="checkbox" id="ciencias" name="ciencias" value="21">
                                 <label for="ciencias">Club de Ciencias</label>
                             </div>
                             <div id="lecturaDiv">
-                                <input type="checkbox" id="lectura" name="lectura" value="Club de lectura">
+                                <input type="checkbox" id="lectura" name="lectura" value="22">
                                 <label for="lectura">Club de Lectura</label>
                             </div>
                             <div id="debateDiv">
-                                <input type="checkbox" id="debate" name="debate" value="Club de debate">
+                                <input type="checkbox" id="debate" name="debate" value="23">
                                 <label for="debate">Club de Debate</label>
                             </div>
                         </div>
@@ -147,12 +150,12 @@
                         <div id="comunitario" class="sector">
                             <h4>Sector Voluntariado:</h4>
                             <div id="hospitalesDiv">
-                                <input type="checkbox" id="hospitales" name="hospitales" value="Voluntariado en hospitales">
+                                <input type="checkbox" id="hospitales" name="hospitales" value="24">
                                 <label for="hospitales">Hospitales</label>
                             </div>
                             <div id="refugiosDiv">
                                 <input type="checkbox" id="refugios_animales" name="refugios_animales"
-                                value="Voluntariado en refugios de animales">
+                                value="25">
                             <label for="refugios_animales">Refugios de Animales</label>
                             </div>
                         </div>
@@ -160,15 +163,15 @@
                         <div id="idiomas" class="sector">
                             <h4>Sector Idiomas:</h4>
                             <div id="inglesDiv">
-                                <input type="checkbox" id="ingles" name="ingles" value="Club de ingles">
+                                <input type="checkbox" id="ingles" name="ingles" value="1">
                                 <label for="ingles">Inglés</label>
                             </div>
                             <div id="francesDiv">
-                                <input type="checkbox" id="frances" name="frances" value="Club de Frances">
+                                <input type="checkbox" id="frances" name="frances" value="2">
                                 <label for="frances">Francés</label>
                             </div>
                             <div id="alemanDiv">
-                                <input type="checkbox" id="aleman" name="aleman" value="Club de Aleman">
+                                <input type="checkbox" id="aleman" name="aleman" value="3">
                                 <label for="aleman">Alemán</label>
                             </div>
                         </div>
@@ -176,17 +179,31 @@
                         <div id="huertaDiv" class="sector">
                             <h4>Sector Huerta:</h4>
                             <div id="huertaInputDiv">
-                                <input type="checkbox" id="huerta" name="huerta" value="Huerta organica">
-                                <label for="huerta">Huerta</label>
+                                <input type="checkbox" id="huerta" name="huerta" value="26">
+                                <label for="huerta">Huerta Orgánica</label>
                             </div>
                         </div>
-                        <!-- Mostrar mensajes de error -->
-                        <div id="errorActividades" class="error"></div>
                     </div>
                     <button type="submit" class="boton">Enviar</button>
                 </form>
             </section>
         </main>
+        <!-- Modal de error -->
+        <div id="errorModal" class="modal">
+            <div class="modal-content">
+                <i id="close-error" class="fa-solid fa-xmark close"></i>
+                <i class="fa-solid fa-xmark error"></i>
+                <p id="error-message"></p>
+            </div>
+        </div>
+        <!-- Modal de exito -->
+        <div id="succesModal" class="modal">
+            <div class="modal-content">
+                <i id="close-succes" class="fa-solid fa-xmark close"></i>
+                <i class="fa-solid fa-check succes"></i>
+                <p id="succes-message"></p>
+            </div>
+        </div>
         <footer>
             <section id="footer-content" class="footer-pages">
                 <!-- Contacto -->

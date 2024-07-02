@@ -843,30 +843,29 @@ input[type="submit"]:hover {
     margin: 15% auto;
     padding: 5px 15px;
     width: 30%;
-    height: 25vh;
-    position: relative;
+    height: 28vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-content p {
-    position: absolute;
-    top: 70%;
-    left: 5%;
+    text-align: center;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 1.5em;
 }
 
 .alerta {
-    position: absolute;
-    top: 20%;
-    left: 43%;
     color: orange;
     font-size: 90px;
+    margin-bottom: 10px;
 }
 
 .close {
     color: #656565;
-    float: right;
+    align-self: flex-end;
     font-size: 28px;
     font-weight: bold;
 }

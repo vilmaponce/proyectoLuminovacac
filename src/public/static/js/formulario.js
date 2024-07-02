@@ -1,3 +1,9 @@
+/*
+ * Este archivo js contiene:
+ *  - La lógica para manejar los datos que se enviaran desdel el FE
+ *      al BE para gestionar la inscripción del alumno.
+ */
+
 // JS que muestra actividades a inscribirse según nivel escolar
 
 // Opciones de Deporte
@@ -52,7 +58,7 @@ function nivelEscolar() {
     };
 
     // Si el nivel educativo es: PRIMARIO
-    if (selectNivel == 'primario') {       
+    if (selectNivel == 'primario') {
         debate.classList.add('hidden');
         hospitales.classList.add('hidden');
     };
@@ -68,3 +74,135 @@ function nivelEscolar() {
 };
 
 /*------------------------------------------------------------*/
+// JS para insertar los datos del alumno en el form
+const nombreCompleto = document.getElementById("nombreCompleto");
+const correoContacto = document.getElementById("email");
+
+nombreCompleto.value = localStorage.getItem("nombre") + " " + localStorage.getItem("apellido");
+correoContacto.value = localStorage.getItem("email");
+
+/*------------------------------------------------------------*/
+// JS para cargar la inscripcion en la BBDD
+document.getElementById('registroForm').addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    // Obtenemos todos los checkboxes de las actividades
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+    // Observamos la selección de los checkboxes
+    function handleCheckboxChange(event) {
+        // Desmarcar todos los checkboxes
+        checkboxes.forEach(checkbox => {
+            if (checkbox !== event.target) {
+                checkbox.checked = false;
+            };
+        });
+    };
+
+    // Asignamos evento de cambio a los checkboxes
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', handleCheckboxChange);
+    });
+
+    // Obtenemos el valor del checkbox seleccionado
+    function obtenerValorCheckboxSeleccionado() {
+        let valorSeleccionado = '';
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                valorSeleccionado = checkbox.value;
+            };
+        });
+        return valorSeleccionado;
+    };
+    const actividadSeleccionada = obtenerValorCheckboxSeleccionado();
+
+    let dni = localStorage.getItem("dni");
+    let curso = actividadSeleccionada;
+
+    const inscripcion = { dni, curso };
+
+    try {
+        const response = await fetch('/luminova/inscripcion', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(inscripcion)
+        });
+
+        if (response.ok) {
+            const modal = document.getElementById("succesModal");
+            const mensaje = document.getElementById("succes-message");
+            mensaje.innerText = "¡El alumno se ha inscripto con éxito!"
+            modal.style.display = 'block';
+
+            // usuario cierra el modal
+            const close = document.getElementById('close-succes');
+            close.onclick = function () {
+                modal.style.display = 'none';
+                // Recarga la página
+                location.reload();
+            };
+
+            // Cerrar el modal haciendo clic fuera del mismo
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                    // Recarga la página
+                    location.reload();
+                };
+                return
+            };
+            return
+        } else {
+            const modal = document.getElementById("errorModal");
+            const mensaje = document.getElementById("error-message");
+            mensaje.innerText = "Error al cargar la inscrición."
+            modal.style.display = 'block';
+
+            //usuario cierra el modal
+            const close = document.querySelector('.close');
+            close.onclick = function () {
+                modal.style.display = 'none';
+                // Recarga la página
+                location.reload();
+            };
+
+            // Cerrar el modal haciendo clic fuera del mismo
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                    // Recarga la página
+                    location.reload();
+                };
+                return
+            };
+            return
+        }
+    } catch (error) {
+        console.error('Error al cargar la inscrición:', error);
+        const modal = document.getElementById("errorModal");
+            const mensaje = document.getElementById("error-message");
+            mensaje.innerText = "Error al cargar la inscrición."
+            modal.style.display = 'block';
+
+            //usuario cierra el modal
+            const close = document.querySelector('.close');
+            close.onclick = function () {
+                modal.style.display = 'none';
+                // Recarga la página
+                location.reload();
+            };
+
+            // Cerrar el modal haciendo clic fuera del mismo
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                    // Recarga la página
+                    location.reload();
+                };
+                return
+            };
+            return
+    }
+});
