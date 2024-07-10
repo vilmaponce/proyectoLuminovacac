@@ -48,33 +48,44 @@ const getAllRegistrations = (req, res) => {
 
 // C - .createRegistrations - FUNCIONA FE y BE
 const createRegistrations = (req, res) => {
-    // Desestructuramos la request
     const { dni, curso } = req.body;
-    // Creamos la consulta para cargar una inscripcion
-    // -- estado 1 -> inscripto
-    // -- estado 0 -> dado de baja
+
+    // Validación simple de datos
+    if (!dni || !curso) {
+        return res.status(400).json({ error: 'Faltan datos obligatorios.' });
+    }
+
+    // Consulta SQL para insertar la inscripción
     const sql = "INSERT INTO inscripcion (alumno_dni, curso_id, estado) VALUES (?, ?, 1);";
-    
-    // Enviamos la consulta a la base de datos
+
+    // Ejecutar la consulta SQL
     db.query(sql, [dni, curso], (err, result) => {
-        // Si sucede un error
-        if (err) throw err;
-        // Si todo sale bien
-        res.json({ mensaje: "¡Alumno inscripto con éxito!"});
+        if (err) {
+            console.error("Error al insertar inscripción:", err);
+            return res.status(500).json({ error: 'Error interno del servidor.' });
+        }
+
+        res.json({ mensaje: "¡Alumno inscripto con éxito!" });
     });
 };
 
+
 // D - .createStudent - FUNCIONA FE y BE
 const createStudent = (req, res) => {
-    // Desestructuramos la request
-    const { dni, nombre, apellido, nacimiento, genero, email, telefono, calle, num, ciudad, codigoPostal, clave } = req.body;
-    // Creamos la consulta para cargar una pelicula
-    const sql = "INSERT INTO alumno (dni, nombre, apellido, nacimiento, genero, email, telefono, calle, num, ciudad, codigoPostal, clave) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
-    // Enviamos la consulta a la base de datos
-    db.query(sql, [dni, nombre, apellido, nacimiento, genero, email, telefono, calle, num, ciudad, codigoPostal, clave], (err, result) => {
-        // Si sucede un error
-        if (err) throw err;
-        // Si todo sale bien
+    const { dni, nombre, apellido, nacimiento, genero, email, telefono, calle, num, ciudad, cp, clave } = req.body;
+
+    // Validación de campos obligatorios
+    if (!dni || !nombre || !apellido || !email || !clave) {
+        return res.status(400).json({ error: 'Todos los campos obligatorios deben ser llenados.' });
+    }
+
+    const sql = "INSERT INTO alumno (dni, nombre, apellido, nacimiento, genero, email, telefono, calle, num, ciudad, cp, clave) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    db.query(sql, [dni, nombre, apellido, nacimiento, genero, email, telefono, calle, num, ciudad, cp, clave], (err, result) => {
+        if (err) {
+            console.error('Error al insertar alumno:', err);
+            return res.status(500).json({ error: 'Error interno del servidor.' });
+        }
         res.json({ mensaje: "¡Alumno cargado con éxito!" });
     });
 };

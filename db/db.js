@@ -10,7 +10,7 @@ const mysql = require("mysql2");
 const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "Juan2801",
+    password: "12345",
     port: 3306,
     database: "luminova"
 });
